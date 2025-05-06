@@ -1,0 +1,3 @@
+#!/bin/bash
+WORDS='--how --version --completion'
+complete -W "$WORDS" gwind  # -d -f

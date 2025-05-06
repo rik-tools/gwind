@@ -1,0 +1,11 @@
+#!/bin/bash
+##
+# $ usr/use
+##
+source usr/usage
+PATH="$(stack_lbp):$PATH"
+
+   assert_exit 0 "gwind-exe --how" 1>$DN\
+&& assert_exit 0 "gwind-exe --version" 1>$DN\
+&& assert_exit 0 "gwind-exe --completion" 1>$DN\
+&& echo ®

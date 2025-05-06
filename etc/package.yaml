@@ -1,0 +1,60 @@
+name: "gwind"
+version: 0.0.0
+github: "rik-routine/gwind"
+license: "GPL"
+license-file: "etc/license"
+author: "Rik Howard"
+maintainer: "rik@lrbh.info"
+copyright: "2025 Rik Howard"
+synopsis: "GWind is a tool for accomplishing some foundational tasks on GCP."
+category: "Experimental"
+description: "Please see the read-me on GitHub at <https://github.com/rik-routine/gwind>"
+
+extra-doc-files:
+- readMe.md
+- artisan.md
+- builder.md
+- changes.md
+
+dependencies:
+- base >= 4.7 && < 5
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+- -Wno-name-shadowing
+
+library:
+  source-dirs: src
+
+executables:
+  gwind-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - text >= 2.0.2 && < 2.2
+    - neat-interpolation >= 0.5.1.4 && < 0.5.2
+    - gwind
+
+tests:
+  gwind-test:
+    main: Test.hs
+    source-dirs: tst
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - gwind
+    - HUnit
