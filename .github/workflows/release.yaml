@@ -6,9 +6,9 @@ on:
       linux_amd_name:
         type: string
         required: true
-      darwin_arm_name:
-        type: string
-        required: true
+      #darwin_arm_name:
+      #  type: string
+      #  required: true
       #linux_arm_name:
       #  type: string
       #  required: true
@@ -36,11 +36,11 @@ jobs:
           name: ${{inputs.linux_amd_name}}
           path: artefacts
 
-      - name: Download executable Darwin ARM
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{inputs.darwin_arm_name}}
-          path: artefacts
+      #- name: Download executable Darwin ARM
+      #  uses: actions/download-artifact@v4
+      #  with:
+      #    name: ${{inputs.darwin_arm_name}}
+      #    path: artefacts
 
       #- name: Download executable Linux ARM
       #  uses: actions/download-artifact@v4

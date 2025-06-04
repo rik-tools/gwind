@@ -7,11 +7,6 @@
 
 ## Doing
 
-### 0.2.0 Gwind: service accounts supported
-
-
-## To Do
-
 ### 0.2.1 Gwind: service account key revision supported
 * src/GWind/ServiceAccountKey/Accessor.hs
 * src/GWind/ServiceAccountKey/Adapter.hs
@@ -25,6 +20,9 @@
 * tst/GWind/ServiceAccountKey/ConstructorIT.hs
 * tst/GWind/ServiceAccountKey/RequestUT.hs
 * tst/GWind/ServiceAccountKey/ServiceIT.hs
+
+
+## To Do
 
 ### 0.2.2 Gwind: service account key creation supported
 
@@ -53,6 +51,8 @@
 
 
 ## Done
+
+### 0.2.0 Gwind: service accounts supported
 
 ### 0.1.3 GWind: service account deletion supported
 

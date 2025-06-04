@@ -16,12 +16,12 @@ jobs:
       program: gwind
       version: ${{github.ref_name}}
 
-  darwin-arm:
-    uses: ./.github/workflows/build.yaml
-    with:
-      os-name: macos-latest
-      program: gwind
-      version: ${{github.ref_name}}
+  #darwin-arm:
+  #  uses: ./.github/workflows/build.yaml
+  #  with:
+  #    os-name: macos-latest
+  #    program: gwind
+  #    version: ${{github.ref_name}}
 
   #linux-arm:
   #  uses: ./.github/workflows/build.yaml
@@ -45,12 +45,12 @@ jobs:
   #    version: ${{github.ref_name}}
   #    suffix: .exe
 
-  #release:
-  #  uses: ./.github/workflows/release.yaml
-  #  needs: [linux-amd, darwin-arm]  #, linux-arm, darwin-amd, windows-amd
-  #  with:
-  #    linux_amd_name: ${{needs.linux-amd.artefact_name}}
-  #    darwin_arm_name: ${{needs.darwin-arm.artefact_name}}
+  release:
+    uses: ./.github/workflows/release.yaml
+    needs: [linux-amd]  #, darwin-arm, linux-arm, darwin-amd, windows-amd
+    with:
+      linux_amd_name: ${{needs.linux-amd.artefact_name}}
+      #darwin_arm_name: ${{needs.darwin-arm.artefact_name}}
       #linux_arm_name: ${{needs.linux-arm.artefact_name}}
       #darwin_amd_name: ${{needs.darwin-amd.artefact_name}}
       #windows_amd_name: ${{needs.windows-amd.artefact_name}}
