@@ -7,12 +7,10 @@
 
 ## Doing
 
-### 0.0.3 GWind: project creation supported
+### 0.0.4 GWind: project deletion supported
 
 
 ## To Do
-
-### 0.0.4 GWind: project deletion supported
 
 ### 0.1.0 GWind: projects supported
 
@@ -76,6 +74,8 @@
 
 
 ## Done
+
+### 0.0.3 GWind: project creation supported
 
 ### 0.0.2 GWind: project revision supported
 * src/GWind/Common/Auth.hs
