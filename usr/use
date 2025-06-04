@@ -2,6 +2,7 @@
 ##
 # $ usr/use
 ##
+# shellcheck disable=SC2016
 source .secrets
 source usr/usage
 PATH="$(stack_lbp):$PATH"
@@ -53,12 +54,10 @@ PATH="$(stack_lbp):$PATH"
 && assert_exit_n 38 "gwind-exe delete whatever"\
 && assert_exit_n 39 "gwind-exe whatever"\
 \
-&& assert_exit_0 "gwind-exe create service-account $P $SA"\
+&& assert_exit_0 "gwind-exe delete service-account $P $SA"\
 && echo ®
 
-# shellcheck disable=SC2016
 : '
-&& assert_exit_0 "gwind-exe delete service-account $P $SA"\
 && assert_exit_0 "gwind-exe revise service-account-keys $P $SA"\
 && assert_exit_0 "gwind-exe create service-account-key $P $SA"\
 && assert_exit_0 "gwind-exe delete service-account-key $P $SA"\
@@ -67,4 +66,5 @@ PATH="$(stack_lbp):$PATH"
 && assert_exit_0 "gwind-exe create project $P"\
 && assert_exit_0 "gwind-exe delete project $P"\
 && assert_exit_0 "gwind-exe revise service-accounts $P"\
+&& assert_exit_0 "gwind-exe create service-account $P $SA"\
 '
