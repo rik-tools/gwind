@@ -6,7 +6,7 @@
 export DN=/dev/null
 
 assert_exit_0 () { statement=$*
-    $statement 1>$DN
+    $statement 1>>tmp/usage.log
     xit=$?
     if test "$xit" == "0"
     then
@@ -18,7 +18,7 @@ assert_exit_0 () { statement=$*
 }
 
 assert_exit_n () { code=$1; statement=${*:2}
-    $statement 2>$DN
+    $statement 2>>tmp/usage.log
     xit=$?
     if test "$xit" == "$code"
     then
@@ -42,3 +42,4 @@ assert_verb () { verb=$1; original=$2; expected=$3
 }
 
 export -f assert_exit_0 assert_exit_n assert_verb
+mkdir -p tmp; echo > tmp/usage.log

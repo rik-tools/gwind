@@ -7,32 +7,6 @@
 
 ## Doing
 
-### 0.0.1 GWind: program introduced
-* src/GWind/Common/Domain.hs
-* src/GWind/Project/Domain.hs
-* src/GWind/ServiceAccount/Domain.hs
-* src/GWind/BillingProject/Domain.hs
-* src/GWind/Service/Domain.hs
-* src/GWind/Project/Control.hs
-* src/GWind/ServiceAccount/Control.hs
-* src/GWind/ServiceAccountKey/Control.hs
-* src/GWind/IAMPolicy/Control.hs
-* src/GWind/BillingAccount/Control.hs
-* src/GWind/BillingProject/Control.hs
-* src/GWind/Service/Control.hs
-* src/GWind/StorageBucket/Control.hs
-* tst/GWind/Project/ControlIT.hs
-* tst/GWind/ServiceAccount/ControlIT.hs
-* tst/GWind/ServiceAccountKey/ControlIT.hs
-* tst/GWind/IAMPolicy/ControlIT.hs
-* tst/GWind/BillingAccount/ControlIT.hs
-* tst/GWind/BillingProject/ControlIT.hs
-* tst/GWind/Service/ControlIT.hs
-* tst/GWind/StorageBucket/ControlIT.hs
-
-
-## To Do
-
 ### 0.0.2 GWind: project revision supported
 * src/GWind/Common/Auth.hs
 * src/GWind/Common/Caller.hs
@@ -65,6 +39,9 @@
 * tst/GWind/Project/ConstructorIT.hs
 * tst/GWind/Project/RequestUT.hs
 * tst/GWind/Project/AdapterIT.hs
+
+
+## To Do
 
 ### 0.0.3 GWind: project creation supported
 
@@ -132,6 +109,29 @@
 
 
 ## Done
+
+### 0.0.1 GWind: program introduced
+* src/GWind/Common/Domain.hs
+* src/GWind/Project/Domain.hs
+* src/GWind/ServiceAccount/Domain.hs
+* src/GWind/BillingProject/Domain.hs
+* src/GWind/Service/Domain.hs
+* src/GWind/Project/Control.hs
+* src/GWind/ServiceAccount/Control.hs
+* src/GWind/ServiceAccountKey/Control.hs
+* src/GWind/IAMPolicy/Control.hs
+* src/GWind/BillingAccount/Control.hs
+* src/GWind/BillingProject/Control.hs
+* src/GWind/Service/Control.hs
+* src/GWind/StorageBucket/Control.hs
+* tst/GWind/Project/ControlIT.hs
+* tst/GWind/ServiceAccount/ControlIT.hs
+* tst/GWind/ServiceAccountKey/ControlIT.hs
+* tst/GWind/IAMPolicy/ControlIT.hs
+* tst/GWind/BillingAccount/ControlIT.hs
+* tst/GWind/BillingProject/ControlIT.hs
+* tst/GWind/Service/ControlIT.hs
+* tst/GWind/StorageBucket/ControlIT.hs
 
 ### 0.0.0 GWind: initialised
 * readMe.md

@@ -65,12 +65,12 @@ jobs:
     - name: Build dependencies
       run: |
         stack build --only-dependencies
-        # ls -al ~/.stack
-        # du -sh ~/.stack
-        # ls -al .stack-work
-        # du -sh .stack-work
-        # find . -type f -name stack.yaml.lock
-        # find . -type f -name stack.yaml.lock -exec sha256sum {} \;
+        ls -al ~/.stack
+        du -sh ~/.stack
+        ls -al .stack-work
+        du -sh .stack-work
+        find . -type f -name stack.yaml.lock
+        find . -type f -name stack.yaml.lock -exec sha256sum {} \;
 
     - name: Build dependent
       run: stack build
