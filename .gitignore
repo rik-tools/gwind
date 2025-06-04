@@ -5,4 +5,5 @@ zoo
 .idea
 .stack-work
 .directory
+.secrets
 *.cabal

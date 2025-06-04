@@ -3,7 +3,18 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/topics/lock_files
 
-packages: []
+packages:
+- completed:
+    filepath: tmp/rho-system-0.2.1.tar.gz
+    name: rho-system
+    pantry-tree:
+      sha256: 41f4a6ef5ef6b9cda8d5ed9cead3b3ce557a3f63a6af928f60abbd4fc6b8fc2c
+      size: 3540
+    sha256: 5e8e19e9443b5695095a44c18508fa57efbf65089fd82e5c199b246564439c83
+    size: 10886
+    version: 0.2.1
+  original:
+    filepath: tmp/rho-system-0.2.1.tar.gz
 snapshots:
 - completed:
     sha256: f4a61482dcad21151331bf84ec85bee9be43965f143791fa4bb202ac1e443e1b

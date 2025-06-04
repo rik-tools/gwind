@@ -3,4 +3,6 @@ snapshot: lts-23.21
 packages:
 - .
 # ...
+extra-deps:
+- tmp/rho-system-0.2.1.tar.gz
 local-bin-path: /home/rik/studio/product/gwind

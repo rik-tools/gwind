@@ -2,10 +2,65 @@
 ##
 # $ usr/use
 ##
+source .secrets
 source usr/usage
 PATH="$(stack_lbp):$PATH"
 
-   assert_exit 0 "gwind-exe --how" 1>$DN\
-&& assert_exit 0 "gwind-exe --version" 1>$DN\
-&& assert_exit 0 "gwind-exe --completion" 1>$DN\
+   assert_exit_0 "gwind-exe --how"\
+&& assert_exit_0 "gwind-exe --version"\
+&& assert_exit_0 "gwind-exe --completion"\
+\
+&& assert_exit_n  1 "gwind-exe"\
+&& assert_exit_n  2 "gwind-exe revise"\
+&& assert_exit_n  3 "gwind-exe create"\
+&& assert_exit_n  4 "gwind-exe delete"\
+\
+&& assert_exit_n  5 "gwind-exe revise service-accounts"\
+&& assert_exit_n  6 "gwind-exe revise service-account-keys"\
+&& assert_exit_n  7 "gwind-exe revise iam-policy"\
+&& assert_exit_n  8 "gwind-exe revise billing-projects"\
+&& assert_exit_n  9 "gwind-exe revise services"\
+&& assert_exit_n 10 "gwind-exe revise storage-buckets"\
+&& assert_exit_n 11 "gwind-exe revise service-account-keys My_Project"\
+&& assert_exit_n 12 "gwind-exe revise whatever"\
+\
+&& assert_exit_n 13 "gwind-exe create project"\
+&& assert_exit_n 14 "gwind-exe create service-account"\
+&& assert_exit_n 15 "gwind-exe create service-account-key"\
+&& assert_exit_n 16 "gwind-exe create iam-policy-binding"\
+&& assert_exit_n 17 "gwind-exe create billing-project"\
+&& assert_exit_n 18 "gwind-exe create services"\
+&& assert_exit_n 19 "gwind-exe create storage-bucket"\
+&& assert_exit_n 20 "gwind-exe create service-account My_Project"\
+&& assert_exit_n 21 "gwind-exe create service-account-key My_Project"\
+&& assert_exit_n 22 "gwind-exe create iam-policy-binding My_Project"\
+&& assert_exit_n 23 "gwind-exe create billing-project My_Project"\
+&& assert_exit_n 24 "gwind-exe create services My_Project"\
+&& assert_exit_n 25 "gwind-exe create whatever"\
+\
+&& assert_exit_n 26 "gwind-exe delete project"\
+&& assert_exit_n 27 "gwind-exe delete service-account"\
+&& assert_exit_n 28 "gwind-exe delete service-account-key"\
+&& assert_exit_n 29 "gwind-exe delete iam-policy-binding"\
+&& assert_exit_n 30 "gwind-exe delete iam-policy"\
+&& assert_exit_n 31 "gwind-exe delete billing-project"\
+&& assert_exit_n 32 "gwind-exe delete services"\
+&& assert_exit_n 33 "gwind-exe delete storage-bucket"\
+&& assert_exit_n 34 "gwind-exe delete service-account My_Project"\
+&& assert_exit_n 35 "gwind-exe delete service-account-key My_Project"\
+&& assert_exit_n 36 "gwind-exe delete iam-policy-binding My_Project"\
+&& assert_exit_n 37 "gwind-exe delete services My_Project"\
+&& assert_exit_n 38 "gwind-exe delete whatever"\
+&& assert_exit_n 39 "gwind-exe whatever"\
+\
 && echo ®
+
+#&& assert_exit_0 "gwind-exe revise projects"\
+#&& assert_exit_0 "gwind-exe delete project $P"\
+#&& assert_exit_0 "gwind-exe create project $P"\
+#&& assert_exit_0 "gwind-exe revise service-accounts $P"\
+#&& assert_exit_0 "gwind-exe create service-account $P $SA"\
+#&& assert_exit_0 "gwind-exe delete service-account $P $SA"\
+#&& assert_exit_0 "gwind-exe revise service-account-keys $P $SA"\
+#&& assert_exit_0 "gwind-exe create service-account-key $P $SA"\
+#&& assert_exit_0 "gwind-exe delete service-account-key $P $SA"\

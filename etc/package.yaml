@@ -1,5 +1,5 @@
 name: "gwind"
-version: 0.0.0
+version: 0.0.1
 github: "rik-routine/gwind"
 license: "GPL"
 license-file: "etc/license"
@@ -18,6 +18,8 @@ extra-doc-files:
 
 dependencies:
 - base >= 4.7 && < 5
+- text >= 2.1.1 && < 2.2
+- rho-system >= 0.2.0 && < 0.3
 
 ghc-options:
 - -Wall
@@ -33,6 +35,14 @@ ghc-options:
 
 library:
   source-dirs: src
+  dependencies:
+  - aeson >= 2.2.3.0 && < 2.3
+  - aeson-pretty >= 0.8.10 && < 8.11
+  - bytestring >= 0.12.1.0 && < 0.13
+  - wreq >= 0.5.4.3 && < 0.6
+  - http-types >= 0.12.4 && < 0.13
+  - process >= 1.6.25.0 && < 1.7
+  - lens >= 5.3.4 && < 5.4
 
 executables:
   gwind-exe:
@@ -43,7 +53,6 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - text >= 2.0.2 && < 2.2
     - neat-interpolation >= 0.5.1.4 && < 0.5.2
     - gwind
 

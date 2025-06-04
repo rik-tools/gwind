@@ -5,51 +5,40 @@
 
 export DN=/dev/null
 
-assert_equiv () { lhs=$1; rhs=$2
-    if test "$($lhs)" == "$rhs"
-    then echo -n .
-    else
-        echo "$lhs == $($lhs) != $rhs"
-        return 1
-    fi
-}
-
-assert_equal () { lhs=$1; rhs=$2
-    if test "$($lhs)" == "$($rhs)"
-    then echo -n .
-    else
-        echo "$lhs == $($lhs) != $($rhs)"
-        return 1
-    fi
-}
-
-assert_fail () { ohs=$1
-    if test "$($ohs 2>/dev/null)"
-    then
-        echo "succeeds: $ohs"
-        return 1
-    else echo -n .
-    fi
-}
-
-assert_exit () { code=$1; statement=${*:2}
-    $statement
+assert_exit_0 () { statement=$*
+    $statement 1>$DN
     xit=$?
-    if test "$xit" != "$code"
+    if test "$xit" == "0"
     then
+        echo -n .
+    else
+        echo "$xit != 0"
+        return 1
+    fi
+}
+
+assert_exit_n () { code=$1; statement=${*:2}
+    $statement 2>$DN
+    xit=$?
+    if test "$xit" == "$code"
+    then
+        echo -n .
+    else
         echo "$xit != $code"
         return 1
     fi
 }
 
-assert_esit () { code=$1; statement=${*:2}
-    $statement ''
-    xit=$?
-    if test "$xit" != "$code"
-    then
-        echo "$xit != $code"
-        return 1
-    fi
+assert_verb () { verb=$1; original=$2; expected=$3
+    actual=$($verb "$original")
+    test "$expected" == "$actual"\
+    && echo -n .\
+    || {
+        echo "$verb '$original'"
+        echo "== $actual"
+        echo "!= $expected"
+        return 1;
+    };
 }
 
-export -f assert_equal assert_equiv assert_exit assert_fail
+export -f assert_exit_0 assert_exit_n assert_verb
