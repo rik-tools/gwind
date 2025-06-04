@@ -7,12 +7,10 @@
 
 ## Doing
 
-### 0.1.3 GWind: service account deletion supported
+### 0.2.0 Gwind: service accounts supported
 
 
 ## To Do
-
-### 0.2.0 Gwind: service accounts supported
 
 ### 0.2.1 Gwind: service account key revision supported
 * src/GWind/ServiceAccountKey/Accessor.hs
@@ -33,7 +31,6 @@
 ### 0.2.3 Gwind: service account key deletion supported
 
 ### 0.3.0 Gwind: service account keys supported
-
 * 0.3.1 Gwind: iam policy revision supported
 * 0.3.2 Gwind: iam policy-binding creation supported
 * 0.3.3 Gwind: iam policy-binding deletion supported
@@ -56,6 +53,8 @@
 
 
 ## Done
+
+### 0.1.3 GWind: service account deletion supported
 
 ### 0.1.2 GWind: service account creation supported
 
