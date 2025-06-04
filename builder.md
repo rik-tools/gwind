@@ -17,7 +17,7 @@ clear; before diva show state task -- diva update clean build test zippe install
 clear; before diva show state task -- diva check stage
 ```
 ```bash
-clear; before diva show state task -- diva commit entag push # release
+clear; before diva show state task -- diva commit entag push release
 ```
 Other
 ```bash

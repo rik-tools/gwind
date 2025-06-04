@@ -2,7 +2,7 @@
 
 
 # GWind
-GWind is a tool for enacting some foundational tasks on GCP.
+GWind is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you
 
 
 ## Usage
@@ -34,7 +34,7 @@ gwind <verb> <noun> [<adjective> ...]
 | delete | service-account      | *project-snake* *service-snake* |
 | delete | service-account-key  | *project-snake* *service-snake* |
 | delete | iam-policy-binding   | *project-snake* *service-snake* |
-| delete | iam-policy           | *project-snake* *owner-email*   |
+| delete | iam-policy           | *project-snake*                 |
 | delete | billing-project      | *project-snake* *billing-snake* |
 | delete | services             | *project-snake* *service-nicks* |
 | delete | bucket               | *project-snake*                 |
@@ -45,7 +45,6 @@ gwind <verb> <noun> [<adjective> ...]
 | *service-snake* | Robot_Thou                        |
 | *billing-snake* | Thy_Billing                       |
 | *service-nicks* | cloudresourcemanager:serviceusage |
-| *owner-email*   | thou@thy.net                      |
 
 
 ## Development

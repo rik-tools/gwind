@@ -7,43 +7,10 @@
 
 ## Doing
 
-### 0.0.2 GWind: project revision supported
-* src/GWind/Common/Auth.hs
-* src/GWind/Common/Caller.hs
-* src/GWind/Common/HTTP.hs
-* src/GWind/Common/Mutator.hs
-* src/GWind/Common/Opter.hs
-* src/GWind/Common/Presenter.hs
-* src/GWind/Common/Preserver.hs
-* src/GWind/Common/Request.hs
-* src/GWind/Common/Transport.hs
-* src/GWind/Project/Mutator.hs
-* src/GWind/Project/Accessor.hs
-* src/GWind/Project/Service.hs
-* src/GWind/Project/Constructor.hs
-* src/GWind/Project/Request.hs
-* src/GWind/Project/Adapter.hs
-* src/GWind/Project/Response.hs
-* tst/GWind/Common/AuthIT.hs
-* tst/GWind/Common/CallerIT.hs
-* tst/GWind/Common/HTTPIT.hs
-* tst/GWind/Common/MutatorUT.hs
-* tst/GWind/Common/OpterIT.hs
-* tst/GWind/Common/PresenterIT.hs
-* tst/GWind/Common/PreserverIT.hs
-* tst/GWind/Common/RequestUT.hs
-* tst/GWind/Common/TransportUT.hs
-* tst/GWind/Project/AccessorIT.hs
-* tst/GWind/Project/MutatorUT.hs
-* tst/GWind/Project/ServiceIT.hs
-* tst/GWind/Project/ConstructorIT.hs
-* tst/GWind/Project/RequestUT.hs
-* tst/GWind/Project/AdapterIT.hs
+### 0.0.3 GWind: project creation supported
 
 
 ## To Do
-
-### 0.0.3 GWind: project creation supported
 
 ### 0.0.4 GWind: project deletion supported
 
@@ -109,6 +76,39 @@
 
 
 ## Done
+
+### 0.0.2 GWind: project revision supported
+* src/GWind/Common/Auth.hs
+* src/GWind/Common/Caller.hs
+* src/GWind/Common/HTTP.hs
+* src/GWind/Common/Mutator.hs
+* src/GWind/Common/Opter.hs
+* src/GWind/Common/Presenter.hs
+* src/GWind/Common/Preserver.hs
+* src/GWind/Common/Request.hs
+* src/GWind/Common/Transport.hs
+* src/GWind/Project/Mutator.hs
+* src/GWind/Project/Accessor.hs
+* src/GWind/Project/Service.hs
+* src/GWind/Project/Constructor.hs
+* src/GWind/Project/Request.hs
+* src/GWind/Project/Adapter.hs
+* src/GWind/Project/Response.hs
+* tst/GWind/Common/AuthIT.hs
+* tst/GWind/Common/CallerIT.hs
+* tst/GWind/Common/HTTPIT.hs
+* tst/GWind/Common/MutatorUT.hs
+* tst/GWind/Common/OpterIT.hs
+* tst/GWind/Common/PresenterIT.hs
+* tst/GWind/Common/PreserverIT.hs
+* tst/GWind/Common/RequestUT.hs
+* tst/GWind/Common/TransportUT.hs
+* tst/GWind/Project/AccessorIT.hs
+* tst/GWind/Project/MutatorUT.hs
+* tst/GWind/Project/ServiceIT.hs
+* tst/GWind/Project/ConstructorIT.hs
+* tst/GWind/Project/RequestUT.hs
+* tst/GWind/Project/AdapterIT.hs
 
 ### 0.0.1 GWind: program introduced
 * src/GWind/Common/Domain.hs

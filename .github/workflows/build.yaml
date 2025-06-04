@@ -42,11 +42,11 @@ jobs:
     - name: Set up cache
       uses: actions/cache@v4
       with:
-        key: ${{runner.os}}-stack-${{hashFiles ('**/stack.yaml.lock')}}
+        key: ${{runner.os}}-${{hashFiles ('**/stack.yaml.lock')}}
         path: |
           ~/.stack
           .stack-work
-        restore-keys: ${{runner.os}}-stack-
+        restore-keys: ${{runner.os}}-
 
     - name: Install Stack
       uses: haskell-actions/setup@v2
@@ -63,8 +63,10 @@ jobs:
       run: stack setup
 
     - name: Build dependencies
+      run: stack build --only-dependencies
+
+    - name: Debug
       run: |
-        stack build --only-dependencies
         ls -al ~/.stack
         du -sh ~/.stack
         ls -al .stack-work
@@ -72,40 +74,40 @@ jobs:
         find . -type f -name stack.yaml.lock
         find . -type f -name stack.yaml.lock -exec sha256sum {} \;
 
-    - name: Build dependent
-      run: stack build
+    #- name: Build dependent
+    #  run: stack build
 
-    - name: Run tests
-      run: stack test
+    #- name: Run tests
+    #  run: stack test
 
-    - name: Determine artefact
-      id: determine-artefact
-      shell: bash
-      run: |
-        PGM=${{inputs.program}}
-        VSN=${{inputs.version}}
-        SYS=$(uname -s  | tr [:upper:] [:lower:])
-        MAC=$(uname -m)
-        ART=$PGM-$VSN-$SYS-$MAC${{inputs.suffix}}
-        BIN=$(stack path --local-install-root)/bin
-        EXE=$PGM-exe${{inputs.suffix}}
-        echo $PGM
-        echo $VSN
-        echo $SYS
-        echo $MAC
-        echo $ART
-        echo $BIN
-        echo $EXE
-        # ls -l $BIN
-        cp $BIN/$EXE $ART
-        echo artefact_name=$ART >> $GITHUB_OUTPUT
+    #- name: Determine artefact
+    #  id: determine-artefact
+    #  shell: bash
+    #  run: |
+    #    PGM=${{inputs.program}}
+    #    VSN=${{inputs.version}}
+    #    SYS=$(uname -s  | tr [:upper:] [:lower:])
+    #    MAC=$(uname -m)
+    #    ART=$PGM-$VSN-$SYS-$MAC${{inputs.suffix}}
+    #    BIN=$(stack path --local-install-root)/bin
+    #    EXE=$PGM-exe${{inputs.suffix}}
+    #    echo $PGM
+    #    echo $VSN
+    #    echo $SYS
+    #    echo $MAC
+    #    echo $ART
+    #    echo $BIN
+    #    echo $EXE
+    #    # ls -l $BIN
+    #    cp $BIN/$EXE $ART
+    #    echo artefact_name=$ART >> $GITHUB_OUTPUT
 
-    - name: Upload executable
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{steps.determine-artefact.outputs.artefact_name}}
-        path: ${{steps.determine-artefact.outputs.artefact_name}}
-        if-no-files-found: error
+    #- name: Upload executable
+    #  uses: actions/upload-artifact@v4
+    #  with:
+    #    name: ${{steps.determine-artefact.outputs.artefact_name}}
+    #    path: ${{steps.determine-artefact.outputs.artefact_name}}
+    #    if-no-files-found: error
 
-    outputs:
-      artefact_name: ${{steps.determine-artefact.outputs.artefact_name}}
+    #outputs:
+    #  artefact_name: ${{steps.determine-artefact.outputs.artefact_name}}
