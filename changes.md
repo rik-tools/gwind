@@ -7,12 +7,10 @@
 
 ## Doing
 
-### 0.0.4 GWind: project deletion supported
+### 0.1.0 GWind: projects supported
 
 
 ## To Do
-
-### 0.1.0 GWind: projects supported
 
 ### 0.1.1 GWind: service account revision supported
 * src/GWind/ServiceAccount/Request.hs
@@ -74,6 +72,8 @@
 
 
 ## Done
+
+### 0.0.4 GWind: project deletion supported
 
 ### 0.0.3 GWind: project creation supported
 
