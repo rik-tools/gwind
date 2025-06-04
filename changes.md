@@ -7,11 +7,6 @@
 
 ## Doing
 
-### 0.1.0 GWind: projects supported
-
-
-## To Do
-
 ### 0.1.1 GWind: service account revision supported
 * src/GWind/ServiceAccount/Request.hs
 * src/GWind/ServiceAccount/Response.hs
@@ -24,6 +19,9 @@
 * tst/GWind/ServiceAccount/ConstructorIT.hs
 * tst/GWind/ServiceAccount/AdapterIT.hs
 * tst/GWind/ServiceAccount/MutatorUT.hs
+
+
+## To Do
 
 ### 0.1.2 GWind: service account creation supported
 
@@ -72,6 +70,8 @@
 
 
 ## Done
+
+### 0.1.0 GWind: projects supported
 
 ### 0.0.4 GWind: project deletion supported
 
