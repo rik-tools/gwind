@@ -4,13 +4,13 @@ on:
   push:
     tags: ['*']
 
-permissions:
-  contents: write
+#permissions:
+#  contents: write
 
 jobs:
 
   linux-amd:
-    uses: ./.github/workflows/build.yaml
+    uses: .github/workflows/tag-build.yaml
     with:
       os-name: ubuntu-latest
       program: gwind
@@ -46,7 +46,7 @@ jobs:
   #    suffix: .exe
 
   release:
-    uses: ./.github/workflows/release.yaml
+    uses: .github/workflows/tag-release.yaml
     needs: [linux-amd]  #, darwin-arm, linux-arm, darwin-amd, windows-amd
     with:
       linux_amd_name: ${{needs.linux-amd.artefact_name}}

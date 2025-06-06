@@ -2,7 +2,7 @@
 
 
 # GWind
-GWind is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly and let you get on with more interesting activities.  GWind requires GCloud to be on the path. 
+GWind is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly, to let you get on with more interesting activities.  GWind requires GCloud to be on the path. 
 
 
 ## Usage

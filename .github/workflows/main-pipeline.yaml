@@ -1,0 +1,20 @@
+name: Main Pipeline
+
+on:
+  push:
+    branches: ["main"]
+
+#permissions:
+#  contents: read
+
+jobs:
+
+  linux-md:
+    uses: ./.github/workflows/main-cache.yaml
+    with:
+        os-name: ubuntu-latest
+
+  darwin-arm:
+    uses: ./.github/workflows/main-cache.yaml
+    with:
+      os-name: macos-latest

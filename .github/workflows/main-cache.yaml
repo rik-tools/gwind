@@ -1,8 +1,11 @@
 name: Haskell CI
 
 on:
-  push:
-    branches: ["main"]
+  workflow_call:
+    inputs:
+      os-name:
+        type: string
+        required: true
 
 permissions:
   contents: read
@@ -10,7 +13,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{inputs.os-name}}
     steps:
 
     - name: Check out code

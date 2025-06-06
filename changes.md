@@ -7,24 +7,10 @@
 
 ## Doing
 
-### 0.2.1 Gwind: service account key revision supported
-* src/GWind/ServiceAccountKey/Accessor.hs
-* src/GWind/ServiceAccountKey/Adapter.hs
-* src/GWind/ServiceAccountKey/Constructor.hs
-* src/GWind/ServiceAccountKey/Domain.hs
-* src/GWind/ServiceAccountKey/Request.hs
-* src/GWind/ServiceAccountKey/Response.hs
-* src/GWind/ServiceAccountKey/Service.hs
-* tst/GWind/ServiceAccountKey/AccessorIT.hs
-* tst/GWind/ServiceAccountKey/AdapterIT.hs
-* tst/GWind/ServiceAccountKey/ConstructorIT.hs
-* tst/GWind/ServiceAccountKey/RequestUT.hs
-* tst/GWind/ServiceAccountKey/ServiceIT.hs
+### 0.2.2 Gwind: service account key creation supported
 
 
 ## To Do
-
-### 0.2.2 Gwind: service account key creation supported
 
 ### 0.2.3 Gwind: service account key deletion supported
 
@@ -51,6 +37,20 @@
 
 
 ## Done
+
+### 0.2.1 Gwind: service account key revision supported
+* src/GWind/ServiceAccountKey/Accessor.hs
+* src/GWind/ServiceAccountKey/Adapter.hs
+* src/GWind/ServiceAccountKey/Constructor.hs
+* src/GWind/ServiceAccountKey/Domain.hs
+* src/GWind/ServiceAccountKey/Request.hs
+* src/GWind/ServiceAccountKey/Response.hs
+* src/GWind/ServiceAccountKey/Service.hs
+* tst/GWind/ServiceAccountKey/AccessorIT.hs
+* tst/GWind/ServiceAccountKey/AdapterIT.hs
+* tst/GWind/ServiceAccountKey/ConstructorIT.hs
+* tst/GWind/ServiceAccountKey/RequestUT.hs
+* tst/GWind/ServiceAccountKey/ServiceIT.hs
 
 ### 0.2.0 Gwind: service accounts supported
 
