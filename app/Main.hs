@@ -75,7 +75,7 @@ where
             "revise": "billing-accounts"    : _                             -> reviseBillingAccountsM
             "revise": "billing-projects"    : billingSnake: _               -> reviseBillingProjectsM billingSnake
             "revise": "services"            : projectSnake: _               -> reviseServicesM projectSnake
-            "revise": "storageBucket"       : projectSnake: _               -> reviseStorageBucketsM projectSnake
+            "revise": "storage-buckets"     : projectSnake: _               -> reviseStorageBucketsM projectSnake
             "revise": noun: _ -> exit 12 ("unknown noun: " ++ noun)
             --
             "create": "project"            : []    -> exit 13 "missing <project-snake>"

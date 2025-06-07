@@ -38,6 +38,9 @@ import qualified GWind.Service.ServiceIT as GWind_Service_ServiceIT (testList)
 import qualified GWind.Service.ConstructorIT as GWind_Service_ConstructorIT (testList)
 import qualified GWind.Service.AdapterIT as GWind_Service_AdapterIT (testList)
 import qualified GWind.StorageBucket.ControlIT as GWind_StorageBucket_ControlIT (testList)
+import qualified GWind.StorageBucket.ServiceIT as GWind_StorageBucket_ServiceIT (testList)
+import qualified GWind.StorageBucket.ConstructorIT as GWind_StorageBucket_ConstructorIT (testList)
+import qualified GWind.StorageBucket.AdapterIT as GWind_StorageBucket_AdapterIT (testList)
 import qualified GWind.Common.MutatorUT as GWind_Common_MutatorUT (testList)
 import qualified GWind.Common.TransportUT as GWind_Common_TransportUT (testList)
 import qualified GWind.Project.MutatorUT as GWind_Project_MutatorUT (testList)
@@ -51,6 +54,8 @@ import qualified GWind.BillingProject.RequestUT as GWind_BillingProject_RequestU
 import qualified GWind.Service.MutatorUT as GWind_Service_MutatorUT (testList)
 import qualified GWind.Service.Request1UT as GWind_Service_Request1UT (testList)
 import qualified GWind.Service.Request2UT as GWind_Service_Request2UT (testList)
+import qualified GWind.StorageBucket.MutatorUT as GWind_StorageBucket_MutatorUT (testList)
+import qualified GWind.StorageBucket.RequestUT as GWind_StorageBucket_RequestUT (testList)
 
 --
 main :: IO Counts
@@ -72,6 +77,8 @@ testList = TestList [
     GWind_Service_MutatorUT.testList,
     GWind_Service_Request1UT.testList,
     GWind_Service_Request2UT.testList,
+    GWind_StorageBucket_MutatorUT.testList,
+    GWind_StorageBucket_RequestUT.testList,
     GWind_Common_PresenterIT.testList,
     GWind_Common_PreserverIT.testList,
     GWind_Common_OpterIT.testList,
@@ -108,6 +115,9 @@ testList = TestList [
     GWind_Service_ServiceIT.testList,
     GWind_Service_ConstructorIT.testList,
     GWind_Service_AdapterIT.testList,
-    GWind_StorageBucket_ControlIT.testList]
+    GWind_StorageBucket_ControlIT.testList,
+    GWind_StorageBucket_ServiceIT.testList,
+    GWind_StorageBucket_ConstructorIT.testList,
+    GWind_StorageBucket_AdapterIT.testList]
 
 --

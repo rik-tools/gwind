@@ -46,6 +46,7 @@
 | src    | GWind.BillingProject.Domain    | BillingAccountDisplayName | String         |
 | src    | GWind.Service.Domain           | ServiceNicks              | String         |
 | src    | GWind.Service.Domain           | ServiceId                 | String         |
+| src    | GWind.StorageBucket.Domain     | StorageBucketId           | Kebab          |
 
 
 ## Data
@@ -76,6 +77,9 @@
 | src    | GWind.Service.Request2           | Services2          | Services2 {disableDependentServices :: Bool} deriving (Eq, Show, Read, Generic)                                                                                                               |
 | src    | GWind.Service.Response           | Service            | Service {name :: String, parent :: String, state :: String} deriving (Eq, Show, Read, Generic)                                                                                                |
 | src    | GWind.Service.Response           | Services           | Services {services :: [Service]} deriving (Eq, Show, Read, Generic)                                                                                                                           |
+| src    | GWind.StorageBucket.Request      | StorageBucketQ     | StorageBucketQ {name :: String, location :: String} deriving (Eq, Show, Read, Generic)                                                                                                        |
+| src    | GWind.StorageBucket.Response     | StorageBucket      | StorageBucket {id :: String, name :: String, location :: String, locationType :: String, storageClass :: String} deriving (Eq, Show, Read, Generic)                                           |
+| src    | GWind.StorageBucket.Response     | StorageBuckets     | StorageBuckets {kind :: String, items :: [StorageBucket]} deriving (Eq, Show, Read, Generic)                                                                                                  |
 
 
 ## Constants
@@ -222,3 +226,14 @@
 | src    | GWind.StorageBucket.Control         | reviseStorageBucketsM       | ProjectSnake -> IO ()                                                    |
 | src    | GWind.StorageBucket.Control         | createStorageBucketM        | ProjectSnake -> IO ()                                                    |
 | src    | GWind.StorageBucket.Control         | deleteStorageBucketM        | ProjectSnake -> IO ()                                                    |
+| src    | GWind.StorageBucket.Mutator         | storageBucketId             | ProjectSnake -> StorageBucketId                                          |
+| src    | GWind.StorageBucket.Service         | revisionStorageBucketsM     | ProjectId -> IO [StorageBucket]                                          |
+| src    | GWind.StorageBucket.Service         | creationCodeM               | ProjectId -> StorageBucketId -> IO Code                                  |
+| src    | GWind.StorageBucket.Service         | deletionCodeM               | StorageBucketId -> IO Code                                               |
+| src    | GWind.StorageBucket.Constructor     | revisionOutGoerM            | StorageBucketId -> IO OutGoer                                            |
+| src    | GWind.StorageBucket.Constructor     | creationOutGoerM            | ProjectId -> StorageBucketId -> IO OutGoer                               |
+| src    | GWind.StorageBucket.Constructor     | deletionOutGoerM            | StorageBucketId -> IO OutGoer                                            |
+| src    | GWind.StorageBucket.Request         | storageBucketQ              | StorageBucketId -> StorageBucketQ                                        |
+| src    | GWind.StorageBucket.Adapter         | revimentStorageBucketsM     | InComer -> IO [StorageBucket]                                            |
+| src    | GWind.StorageBucket.Adapter         | creamentCodeM               | InComer -> IO Code                                                       |
+| src    | GWind.StorageBucket.Adapter         | delementCodeM               | InComer -> IO Code                                                       |

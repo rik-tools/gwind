@@ -7,18 +7,31 @@
 
 ## Doing
 
-### 0.7.0 GWind: services supported
+### 0.7.1 GWind: storage bucket revision supported
+* src/GWind/StorageBucket/Adapter.hs
+* src/GWind/StorageBucket/Constructor.hs
+* src/GWind/StorageBucket/Domain.hs
+* src/GWind/StorageBucket/Mutator.hs
+* src/GWind/StorageBucket/Request.hs
+* src/GWind/StorageBucket/Response.hs
+* src/GWind/StorageBucket/Service.hs
+* tst/GWind/StorageBucket/AdapterIT.hs
+* tst/GWind/StorageBucket/ConstructorIT.hs
+* tst/GWind/StorageBucket/MutatorUT.hs
+* tst/GWind/StorageBucket/RequestUT.hs
+* tst/GWind/StorageBucket/ServiceIT.hs
 
 
 ## To Do
-* 0.7.1 GWind: bucket revision supported
-* 0.7.2 GWind: bucket creation supported
-* 0.7.3 GWind: bucket deletion supported
-* 0.8.0 GWind: buckets supported
+* 0.7.2 GWind: storage bucket creation supported
+* 0.7.3 GWind: storage bucket deletion supported
+* 0.8.0 GWind: storage buckets supported
 * 1.0.0 GWind: supported
 
 
 ## Done
+
+### 0.7.0 GWind: services supported
 
 ### 0.6.3 GWind: service deletion supported
 

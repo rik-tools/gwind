@@ -61,4 +61,16 @@ gwind: gcloud: readCreateProcessWithExitCode: posix_spawnp: does not exist (No s
 ```
 
 
+## Program Flow
+LHS ordinal: invocation from upper module of lower; RHS ordinal: result by lower to upper
+```mermaid
+graph TD;
+    Control -.-|1, 2| Mutator
+    Control -.-|3, 4| Accessor
+    Control ---|5, 12| Service
+    Service ---|6, 9| Constructor
+    Constructor -.-|7, 8| Request
+    Service ---|10, 11| Adapter
+```
+
 ## *2025-05-06*

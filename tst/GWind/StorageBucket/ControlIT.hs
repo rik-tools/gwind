@@ -1,9 +1,9 @@
--- ⚠
+--
 module GWind.StorageBucket.ControlIT (testList)
 where
 
-    import Test.HUnit (Test (TestCase, TestList), assertEqual)
-    import GWind.StorageBucket.Control (reviseStorageBucketsM, createStorageBucketM, deleteStorageBucketM)
+    import Test.HUnit (Test ({-TestCase,-} TestList){-, assertEqual-})
+    import GWind.StorageBucket.Control ({-reviseStorageBucketsM, createStorageBucketM, deleteStorageBucketM-})
 
 --
     testList :: Test
@@ -14,26 +14,26 @@ where
 
 -- reviseStorageBucketsM :: ProjectSnake -> IO ()
     reviseStorageBucketsMCases :: [Test]
-    reviseStorageBucketsMCases = [
+    reviseStorageBucketsMCases = [{-
         TestCase (assertEqual
             "should return reviseStorageBucketsM"
             undefined
-            =<< reviseStorageBucketsM undefined)]
+            =<< reviseStorageBucketsM undefined)-}]
 
 -- createStorageBucketM :: ProjectSnake -> IO ()
     createStorageBucketMCases :: [Test]
-    createStorageBucketMCases = [
+    createStorageBucketMCases = [{-
         TestCase (assertEqual
             "should return createStorageBucketM"
             undefined
-            =<< createStorageBucketM undefined)]
+            =<< createStorageBucketM undefined)-}]
 
 -- deleteStorageBucketM :: ProjectSnake -> IO ()
     deleteStorageBucketMCases :: [Test]
-    deleteStorageBucketMCases = [
+    deleteStorageBucketMCases = [{-
         TestCase (assertEqual
             "should return deleteStorageBucketM"
             undefined
-            =<< deleteStorageBucketM undefined)]
+            =<< deleteStorageBucketM undefined)-}]
 
 --
