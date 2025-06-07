@@ -7,12 +7,11 @@
 
 ## Doing
 
-### 0.5.2 GWind: billing project creation supported
+### 0.5.3 GWind: billing project deletion supported
 
 
 
 ## To Do
-* 0.5.3 GWind: billing project deletion supported
 * 0.6.0 GWind: billing projects supported
 * 0.6.1 GWind: service revision supported
 * 0.6.2 GWind: service creation supported
@@ -26,6 +25,8 @@
 
 
 ## Done
+
+### 0.5.2 GWind: billing project creation supported
 
 ### 0.5.1 GWind: billing project revision supported
 * src/GWind/BillingProject/Accessor.hs
