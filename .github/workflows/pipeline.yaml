@@ -4,65 +4,25 @@ on:
   push:
     tags: ['*']
 
-#permissions:
-#  contents: write
-
 jobs:
 
-  linux-amd-cache:
-    uses: ./.github/workflows/cache.yaml@main
-    with:
-      os-name: ubuntu-latest
-
-  darwin-arm-cache:
-    uses: ./.github/workflows/cache.yaml@main
-    with:
-      os-name: macos-latest
-
-  linux-amd-build:
+  linux-amd:
     uses: ./.github/workflows/build.yaml@${{github.ref_name}}
-    needs: linux-amd-cache
     with:
       os-name: ubuntu-latest
       program: gwind
       version: ${{github.ref_name}}
 
-  #darwin-arm-build:
-  #  uses: ./.github/workflows/build.yaml
-  #  needs: darwin-arm-cache
-  #  with:
-  #    os-name: macos-latest
-  #    program: gwind
-  #    version: ${{github.ref_name}}
-
-  #linux-arm:
-  #  uses: ./.github/workflows/build.yaml
-  #  with:
-  #    os-name: ubuntu-24.04-arm
-  #    program: gwind
-  #    version: ${{github.ref_name}}
-
-  #darwin-amd:
-  #  uses: ./.github/workflows/build.yaml
-  #  with:
-  #    os-name: macos-13
-  #    program: gwind
-  #    version: ${{github.ref_name}}
-
-  #windows-amd:
-  #  uses: ./.github/workflows/build.yaml
-  #  with:
-  #    os-name: windows-latest
-  #    program: gwind
-  #    version: ${{github.ref_name}}
-  #    suffix: .exe
+  darwin-arm:
+    uses: ./.github/workflows/build.yaml
+    with:
+      os-name: macos-latest
+      program: gwind
+      version: ${{github.ref_name}}
 
   release:
     uses: .github/workflows/release.yaml
-    needs: [linux-amd-build]  #, darwin-arm, linux-arm, darwin-amd, windows-amd
+    needs: [linux-amd, darwin-arm]
     with:
       linux_amd_name: ${{needs.linux-amd.artefact_name}}
-      #darwin_arm_name: ${{needs.darwin-arm.artefact_name}}
-      #linux_arm_name: ${{needs.linux-arm.artefact_name}}
-      #darwin_amd_name: ${{needs.darwin-amd.artefact_name}}
-      #windows_amd_name: ${{needs.windows-amd.artefact_name}}
+      darwin_arm_name: ${{needs.darwin-arm.artefact_name}}

@@ -6,18 +6,9 @@ on:
       linux_amd_name:
         type: string
         required: true
-      #darwin_arm_name:
-      #  type: string
-      #  required: true
-      #linux_arm_name:
-      #  type: string
-      #  required: true
-      #darwin_amd_name:
-      #  type: string
-      #  required: true
-      #windows_amd_name:
-      #  type: string
-      #  required: true
+      darwin_arm_name:
+        type: string
+        required: true
 
 permissions:
   contents: write
@@ -36,29 +27,11 @@ jobs:
           name: ${{inputs.linux_amd_name}}
           path: artefacts
 
-      #- name: Download executable Darwin ARM
-      #  uses: actions/download-artifact@v4
-      #  with:
-      #    name: ${{inputs.darwin_arm_name}}
-      #    path: artefacts
-
-      #- name: Download executable Linux ARM
-      #  uses: actions/download-artifact@v4
-      #  with:
-      #    name: ${{inputs.linux_arm_name}}
-      #    path: artefacts
-
-      #- name: Download executable Darwin AMD
-      #  uses: actions/download-artifact@v4
-      #  with:
-      #    name: ${{inputs.darwin_amd_name}}
-      #    path: artefacts
-
-      #- name: Download executable Windows AMD
-      #  uses: actions/download-artifact@v4
-      #  with:
-      #    name: ${{inputs.windows_amd_name}}
-      #    path: artefacts
+      - name: Download executable Darwin ARM
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{inputs.darwin_arm_name}}
+          path: artefacts
 
       - name: Debug
         run: |
