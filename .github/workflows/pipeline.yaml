@@ -12,7 +12,7 @@ jobs:
         echo ${{github.event}}
 
   linux-amd-cache:
-    uses: ./.github/workflows/cache.yaml@main
+    uses: .github/workflows/cache.yaml
     with:
       os-name: ubuntu-latest
 

@@ -7,19 +7,11 @@
 
 ## Doing
 
-### 0.4.1 GWind: billing account revision supported
-* src/GWind/BillingAccount/Adapter.hs
-* src/GWind/BillingAccount/Constructor.hs
-* src/GWind/BillingAccount/Response.hs
-* src/GWind/BillingAccount/Service.hs
-* tst/GWind/BillingAccount/AdapterIT.hs
-* tst/GWind/BillingAccount/ConstructorIT.hs
-* tst/GWind/BillingAccount/ServiceIT.hs
+### 0.5.0 GWind: billing accounts supported
 
 
 
 ## To Do
-* 0.5.0 GWind: billing accounts supported
 * 0.5.1 GWind: billing project revision supported
 * 0.5.2 GWind: billing project creation supported
 * 0.5.3 GWind: billing project deletion supported
@@ -36,6 +28,15 @@
 
 
 ## Done
+
+### 0.4.1 GWind: billing account revision supported
+* src/GWind/BillingAccount/Adapter.hs
+* src/GWind/BillingAccount/Constructor.hs
+* src/GWind/BillingAccount/Response.hs
+* src/GWind/BillingAccount/Service.hs
+* tst/GWind/BillingAccount/AdapterIT.hs
+* tst/GWind/BillingAccount/ConstructorIT.hs
+* tst/GWind/BillingAccount/ServiceIT.hs
 
 ### 0.4.0 GWind: iam policy supported
 
