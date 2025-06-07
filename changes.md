@@ -7,13 +7,21 @@
 
 ## Doing
 
-### 0.3.0 Gwind: service account keys supported
+### 0.3.1 Gwind: iam policy revision supported
+* src/GWind/IAMPolicy/Adapter.hs
+* src/GWind/IAMPolicy/Constructor.hs
+* src/GWind/IAMPolicy/Request.hs
+* src/GWind/IAMPolicy/Response.hs
+* src/GWind/IAMPolicy/Service.hs
+* tst/GWind/IAMPolicy/AdapterIT.hs
+* tst/GWind/IAMPolicy/ConstructorIT.hs
+* tst/GWind/IAMPolicy/RequestUT.hs
+* tst/GWind/IAMPolicy/ServiceIT.hs
 
 
 ## To Do
-* 0.3.1 Gwind: iam policy revision supported
-* 0.3.2 Gwind: iam policy-binding creation supported
-* 0.3.3 Gwind: iam policy-binding deletion supported
+* 0.3.2 Gwind: iam policy binding creation supported
+* 0.3.3 Gwind: iam policy binding deletion supported
 * 0.3.4 Gwind: iam policy deletion supported
 * 0.4.0 Gwind: iam policy supported
 * 0.4.1 Gwind: billing account revision supported
@@ -33,6 +41,8 @@
 
 
 ## Done
+
+### 0.3.0 Gwind: service account keys supported
 
 ### 0.2.3 Gwind: service account key deletion supported
 

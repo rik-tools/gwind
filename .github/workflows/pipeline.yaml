@@ -7,14 +7,14 @@ on:
 jobs:
 
   linux-amd:
-    uses: ./.github/workflows/build.yaml@${{github.ref_name}}
+    uses: .github/workflows/build.yaml
     with:
       os-name: ubuntu-latest
       program: gwind
       version: ${{github.ref_name}}
 
   darwin-arm:
-    uses: ./.github/workflows/build.yaml
+    uses: .github/workflows/build.yaml
     with:
       os-name: macos-latest
       program: gwind

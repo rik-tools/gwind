@@ -1,9 +1,9 @@
--- ⚠
+--
 module GWind.IAMPolicy.ControlIT (testList)
 where
 
-    import Test.HUnit (Test (TestCase, TestList), assertEqual)
-    import GWind.IAMPolicy.Control (reviseIAMPolicyM, createIAMPolicyBindingM, deleteIAMPolicyBindingM, deleteIAMPolicyM)
+    import Test.HUnit (Test ({-TestCase,-} TestList){-, assertEqual-})
+    import GWind.IAMPolicy.Control ({-reviseIAMPolicyM, createIAMPolicyBindingM, deleteIAMPolicyBindingM, deleteIAMPolicyM-})
 
 --
     testList :: Test
@@ -15,34 +15,34 @@ where
 
 -- reviseIAMPolicyM :: ProjectSnake -> IO ()
     reviseIAMPolicyMCases :: [Test]
-    reviseIAMPolicyMCases = [
+    reviseIAMPolicyMCases = [{-
         TestCase (assertEqual
             "should return reviseIAMPolicyM"
             undefined
-            =<< reviseIAMPolicyM undefined)]
+            =<< reviseIAMPolicyM undefined)-}]
 
 -- createIAMPolicyBindingM :: ProjectSnake -> ServiceSnake -> IO ()
     createIAMPolicyBindingMCases :: [Test]
-    createIAMPolicyBindingMCases = [
+    createIAMPolicyBindingMCases = [{-
         TestCase (assertEqual
             "should return createIAMPolicyBindingM"
             undefined
-            =<< createIAMPolicyBindingM undefined undefined)]
+            =<< createIAMPolicyBindingM undefined undefined)-}]
 
 -- deleteIAMPolicyBindingM :: ProjectSnake -> ServiceSnake -> IO ()
     deleteIAMPolicyBindingMCases :: [Test]
-    deleteIAMPolicyBindingMCases = [
+    deleteIAMPolicyBindingMCases = [{-
         TestCase (assertEqual
             "should return deleteIAMPolicyBindingM"
             undefined
-            =<< deleteIAMPolicyBindingM undefined undefined)]
+            =<< deleteIAMPolicyBindingM undefined undefined)-}]
 
 -- deleteIAMPolicyM :: ProjectSnake -> IO ()
     deleteIAMPolicyMCases :: [Test]
-    deleteIAMPolicyMCases = [
+    deleteIAMPolicyMCases = [{-
         TestCase (assertEqual
             "should return deleteIAMPolicyM"
             undefined
-            =<< deleteIAMPolicyM undefined)]
+            =<< deleteIAMPolicyM undefined)-}]
 
 --

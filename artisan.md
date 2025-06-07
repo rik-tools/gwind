@@ -62,6 +62,9 @@
 | src    | GWind.ServiceAccountKey.Request  | ServiceAccountKeyQ | ServiceAccountKeyQ {keyAlgorithm :: String, privateKeyType :: String} deriving (Eq, Show, Read, Generic)                                                                                      |
 | src    | GWind.ServiceAccountKey.Response | ServiceAccountKey  | ServiceAccountKey {keyAlgorithm :: String, keyOrigin :: String, keyType :: String, name :: String, validAfterTime :: String, validBeforeTime :: String} deriving (Eq, Show, Read, Generic)    |
 | src    | GWind.ServiceAccountKey.Response | ServiceAccountKeys | ServiceAccountKeys {keys :: [ServiceAccountKey]} deriving (Eq, Show, Read, Generic)                                                                                                           |
+| src    | GWind.IAMPolicy.Request          | IAMPolicyQ         | IAMPolicyQ {policy :: IAMPolicy} deriving (Eq, Show, Read, Generic)                                                                                                                           |
+| src    | GWind.IAMPolicy.Response         | Binding            | Binding {members :: [String], role :: String} deriving (Eq, Show, Read, Generic)                                                                                                              |
+| src    | GWind.IAMPolicy.Response         | IAMPolicy          | IAMPolicy {bindings :: [Binding], etag :: String, version :: Int} deriving (Eq, Show, Read, Generic)                                                                                          |
 
 
 ## Constants
@@ -152,6 +155,22 @@
 | src    | GWind.IAMPolicy.Control             | createIAMPolicyBindingM     | ProjectSnake -> ServiceSnake -> IO ()                                    |
 | src    | GWind.IAMPolicy.Control             | deleteIAMPolicyBindingM     | ProjectSnake -> ServiceSnake -> IO ()                                    |
 | src    | GWind.IAMPolicy.Control             | deleteIAMPolicyM            | ProjectSnake -> IO ()                                                    |
+| src    | GWind.IAMPolicy.Service             | revisionIAMPolicyM          | ProjectId -> IO IAMPolicy                                                |
+| src    | GWind.IAMPolicy.Service             | creationCodeM               | ProjectId -> ServiceAccountEmail -> IAMPolicy -> IO Code                 |
+| src    | GWind.IAMPolicy.Service             | bindingDeletionCodeM        | ProjectId -> ServiceAccountEmail -> IAMPolicy -> IO Code                 |
+| src    | GWind.IAMPolicy.Service             | policyDeletionCodeM         | ProjectId -> IAMPolicy -> IO Code                                        |
+| src    | GWind.IAMPolicy.Constructor         | revisionOutGoerM            | ProjectId -> IO OutGoer                                                  |
+| src    | GWind.IAMPolicy.Constructor         | creationOutGoerM            | ProjectId -> ServiceAccountEmail -> IAMPolicy -> IO OutGoer              |
+| src    | GWind.IAMPolicy.Constructor         | bindingDeletionOutGoerM     | ProjectId -> ServiceAccountEmail -> IAMPolicy -> IO OutGoer              |
+| src    | GWind.IAMPolicy.Constructor         | policyDeletionOutGoerM      | ProjectId -> IAMPolicy -> IO OutGoer                                     |
+| src    | GWind.IAMPolicy.Request             | bindingIntroductionQ        | ServiceAccountEmail -> IAMPolicy -> IAMPolicyQ                           |
+| src    | GWind.IAMPolicy.Request             | bindingEliminationQ         | ServiceAccountEmail -> IAMPolicy -> IAMPolicyQ                           |
+| src    | GWind.IAMPolicy.Request             | policyEliminationQ          | IAMPolicy -> IAMPolicyQ                                                  |
+| src    | GWind.IAMPolicy.Adapter             | revimentIAMPolicyM          | InComer -> IO IAMPolicy                                                  |
+| src    | GWind.IAMPolicy.Adapter             | creamentCodeM               | InComer -> IO Code                                                       |
+| src    | GWind.IAMPolicy.Adapter             | bindingDelementCodeM        | InComer -> IO Code                                                       |
+| src    | GWind.IAMPolicy.Adapter             | policyDelementCodeM         | InComer -> IO Code                                                       |
+|        |                                     |                             |                                                                          |
 | src    | GWind.BillingAccount.Control        | reviseBillingAccountsM      | IO ()                                                                    |
 | src    | GWind.BillingProject.Control        | reviseBillingProjectsM      | BillingSnake -> IO ()                                                    |
 | src    | GWind.BillingProject.Control        | createBillingProjectM       | ProjectSnake -> BillingSnake -> IO ()                                    |

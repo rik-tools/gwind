@@ -21,6 +21,9 @@ import qualified GWind.ServiceAccountKey.ServiceIT as GWind_ServiceAccountKey_Se
 import qualified GWind.ServiceAccountKey.ConstructorIT as GWind_ServiceAccountKey_ConstructorIT (testList)
 import qualified GWind.ServiceAccountKey.AdapterIT as GWind_ServiceAccountKey_AdapterIT (testList)
 import qualified GWind.IAMPolicy.ControlIT as GWind_IAMPolicy_ControlIT (testList)
+import qualified GWind.IAMPolicy.ServiceIT as GWind_IAMPolicy_ServiceIT (testList)
+import qualified GWind.IAMPolicy.ConstructorIT as GWind_IAMPolicy_ConstructorIT (testList)
+import qualified GWind.IAMPolicy.AdapterIT as GWind_IAMPolicy_AdapterIT (testList)
 import qualified GWind.BillingAccount.ControlIT as GWind_BillingAccount_ControlIT (testList)
 import qualified GWind.BillingProject.ControlIT as GWind_BillingProject_ControlIT (testList)
 import qualified GWind.Service.ControlIT as GWind_Service_ControlIT (testList)
@@ -32,6 +35,7 @@ import qualified GWind.Project.RequestUT as GWind_Project_RequestUT (testList)
 import qualified GWind.ServiceAccount.MutatorUT as GWind_ServiceAccount_MutatorUT (testList)
 import qualified GWind.ServiceAccount.RequestUT as GWind_ServiceAccount_RequestUT (testList)
 import qualified GWind.ServiceAccountKey.RequestUT as GWind_ServiceAccountKey_RequestUT (testList)
+import qualified GWind.IAMPolicy.RequestUT as GWind_IAMPolicy_RequestUT (testList)
 
 --
 main :: IO Counts
@@ -47,6 +51,7 @@ testList = TestList [
     GWind_ServiceAccount_MutatorUT.testList,
     GWind_ServiceAccount_RequestUT.testList,
     GWind_ServiceAccountKey_RequestUT.testList,
+    GWind_IAMPolicy_RequestUT.testList,
     GWind_Common_PresenterIT.testList,
     GWind_Common_PreserverIT.testList,
     GWind_Common_OpterIT.testList,
@@ -67,6 +72,9 @@ testList = TestList [
     GWind_ServiceAccountKey_ConstructorIT.testList,
     GWind_ServiceAccountKey_AdapterIT.testList,
     GWind_IAMPolicy_ControlIT.testList,
+    GWind_IAMPolicy_ServiceIT.testList,
+    GWind_IAMPolicy_ConstructorIT.testList,
+    GWind_IAMPolicy_AdapterIT.testList,
     GWind_BillingAccount_ControlIT.testList,
     GWind_BillingProject_ControlIT.testList,
     GWind_Service_ControlIT.testList,
