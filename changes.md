@@ -7,25 +7,11 @@
 
 ## Doing
 
-### 0.5.1 GWind: billing project revision supported
-* src/GWind/BillingProject/Accessor.hs
-* src/GWind/BillingProject/Adapter.hs
-* src/GWind/BillingProject/Constructor.hs
-* src/GWind/BillingProject/Mutator.hs
-* src/GWind/BillingProject/Request.hs
-* src/GWind/BillingProject/Response.hs
-* src/GWind/BillingProject/Service.hs
-* tst/GWind/BillingProject/AccessorIT.hs
-* tst/GWind/BillingProject/AdapterIT.hs
-* tst/GWind/BillingProject/ConstructorIT.hs
-* tst/GWind/BillingProject/MutatorUT.hs
-* tst/GWind/BillingProject/RequestUT.hs
-* tst/GWind/BillingProject/ServiceIT.hs
+### 0.5.2 GWind: billing project creation supported
 
 
 
 ## To Do
-* 0.5.2 GWind: billing project creation supported
 * 0.5.3 GWind: billing project deletion supported
 * 0.6.0 GWind: billing projects supported
 * 0.6.1 GWind: service revision supported
@@ -40,6 +26,21 @@
 
 
 ## Done
+
+### 0.5.1 GWind: billing project revision supported
+* src/GWind/BillingProject/Accessor.hs
+* src/GWind/BillingProject/Adapter.hs
+* src/GWind/BillingProject/Constructor.hs
+* src/GWind/BillingProject/Mutator.hs
+* src/GWind/BillingProject/Request.hs
+* src/GWind/BillingProject/Response.hs
+* src/GWind/BillingProject/Service.hs
+* tst/GWind/BillingProject/AccessorIT.hs
+* tst/GWind/BillingProject/AdapterIT.hs
+* tst/GWind/BillingProject/ConstructorIT.hs
+* tst/GWind/BillingProject/MutatorUT.hs
+* tst/GWind/BillingProject/RequestUT.hs
+* tst/GWind/BillingProject/ServiceIT.hs
 
 ### 0.5.0 GWind: billing accounts supported
 
