@@ -1,5 +1,5 @@
 name: "gwind"
-version: 0.6.0
+version: 0.6.1
 github: "rik-routine/gwind"
 license: "GPL"
 license-file: "etc/license"
@@ -43,6 +43,7 @@ library:
   - http-types >= 0.12.4 && < 0.13
   - process >= 1.6.25.0 && < 1.7
   - lens >= 5.3.4 && < 5.4
+  - split >= 0.2.5 && < 0.3
 
 executables:
   gwind-exe:

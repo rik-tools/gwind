@@ -45,6 +45,7 @@
 | src    | GWind.BillingProject.Domain    | BillingAccountName        | String         |
 | src    | GWind.BillingProject.Domain    | BillingAccountDisplayName | String         |
 | src    | GWind.Service.Domain           | ServiceNicks              | String         |
+| src    | GWind.Service.Domain           | ServiceId                 | String         |
 
 
 ## Data
@@ -71,6 +72,10 @@
 | src    | GWind.BillingProject.Request     | BillingProjectQ    | BillingProjectQ {billingAccountName :: String} deriving (Eq, Show, Read, Generic)                                                                                                             |
 | src    | GWind.BillingProject.Response    | BillingProject     | BillingProject  {billingAccountName :: String, billingEnabled :: Bool, name :: String, projectId :: String} deriving (Eq, Show, Read, Generic)                                                |
 | src    | GWind.BillingProject.Response    | BillingProjects    | BillingProjects {projectBillingInfo :: [BillingProject]} deriving (Eq, Show, Read, Generic)                                                                                                   |
+| src    | GWind.Service.Request1           | Services1          | Services1 {serviceIds :: [String]} deriving (Eq, Show, Read, Generic)                                                                                                                         |
+| src    | GWind.Service.Request2           | Services2          | Services2 {disableDependentServices :: Bool} deriving (Eq, Show, Read, Generic)                                                                                                               |
+| src    | GWind.Service.Response           | Service            | Service {name :: String, parent :: String, state :: String} deriving (Eq, Show, Read, Generic)                                                                                                |
+| src    | GWind.Service.Response           | Services           | Services {services :: [Service]} deriving (Eq, Show, Read, Generic)                                                                                                                           |
 
 
 ## Constants
@@ -201,6 +206,19 @@
 | src    | GWind.Service.Control               | reviseServicesM             | ProjectSnake -> IO ()                                                    |
 | src    | GWind.Service.Control               | createServicesM             | ProjectSnake -> ServiceNicks -> IO ()                                    |
 | src    | GWind.Service.Control               | deleteServicesM             | ProjectSnake -> ServiceNicks -> IO ()                                    |
+| src    | GWind.Service.Mutator               | serviceIds                  | ServiceNicks -> [ServiceId]                                              |
+| src    | GWind.Service.Service               | revisionServicesM           | ProjectId -> IO [Service]                                                |
+| src    | GWind.Service.Service               | creationCodeM               | ProjectId -> [ServiceId] -> IO Code                                      |
+| src    | GWind.Service.Service               | deletionCodesM              | ProjectId -> [ServiceId] -> IO Code                                      |
+| src    | GWind.Service.Constructor           | revisionOutGoerM            | ProjectId -> IO OutGoer                                                  |
+| src    | GWind.Service.Constructor           | creationOutGoerM            | ProjectId -> [ServiceId] -> IO OutGoer                                   |
+| src    | GWind.Service.Constructor           | deletionOutGoerM            | ProjectId -> ServiceId -> IO OutGoer                                     |
+| src    | GWind.Service.Request1              | services1                   | [ServiceId] -> Services1                                                 |
+| src    | GWind.Service.Request2              | services2                   | Services2                                                                |
+| src    | GWind.Service.Adapter               | revimentServicesM           | InComer -> IO [Service]                                                  |
+| src    | GWind.Service.Adapter               | creamentCodeM               | InComer -> IO Code                                                       |
+| src    | GWind.Service.Adapter               | delementCodeM               | InComer -> IO Code                                                       |
+|        |                                     |                             |                                                                          |
 | src    | GWind.StorageBucket.Control         | reviseStorageBucketsM       | ProjectSnake -> IO ()                                                    |
 | src    | GWind.StorageBucket.Control         | createStorageBucketM        | ProjectSnake -> IO ()                                                    |
 | src    | GWind.StorageBucket.Control         | deleteStorageBucketM        | ProjectSnake -> IO ()                                                    |

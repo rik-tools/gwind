@@ -7,12 +7,23 @@
 
 ## Doing
 
-### 0.6.0 GWind: billing projects supported
-
+### 0.6.1 GWind: service revision supported
+* src/GWind/Service/Adapter.hs
+* src/GWind/Service/Constructor.hs
+* src/GWind/Service/Mutator.hs
+* src/GWind/Service/Request1.hs
+* src/GWind/Service/Request2.hs
+* src/GWind/Service/Response.hs
+* src/GWind/Service/Service.hs
+* tst/GWind/Service/AdapterIT.hs
+* tst/GWind/Service/ConstructorIT.hs
+* tst/GWind/Service/MutatorUT.hs
+* tst/GWind/Service/Request1UT.hs
+* tst/GWind/Service/Request2UT.hs
+* tst/GWind/Service/ServiceIT.hs
 
 
 ## To Do
-* 0.6.1 GWind: service revision supported
 * 0.6.2 GWind: service creation supported
 * 0.6.3 GWind: service deletion supported
 * 0.7.0 GWind: services supported
@@ -24,6 +35,8 @@
 
 
 ## Done
+
+### 0.6.0 GWind: billing projects supported
 
 ### 0.5.3 GWind: billing project deletion supported
 

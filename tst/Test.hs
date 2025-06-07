@@ -34,6 +34,9 @@ import qualified GWind.BillingProject.ServiceIT as GWind_BillingProject_ServiceI
 import qualified GWind.BillingProject.ConstructorIT as GWind_BillingProject_ConstructorIT (testList)
 import qualified GWind.BillingProject.AdapterIT as GWind_BillingProject_AdapterIT (testList)
 import qualified GWind.Service.ControlIT as GWind_Service_ControlIT (testList)
+import qualified GWind.Service.ServiceIT as GWind_Service_ServiceIT (testList)
+import qualified GWind.Service.ConstructorIT as GWind_Service_ConstructorIT (testList)
+import qualified GWind.Service.AdapterIT as GWind_Service_AdapterIT (testList)
 import qualified GWind.StorageBucket.ControlIT as GWind_StorageBucket_ControlIT (testList)
 import qualified GWind.Common.MutatorUT as GWind_Common_MutatorUT (testList)
 import qualified GWind.Common.TransportUT as GWind_Common_TransportUT (testList)
@@ -45,6 +48,9 @@ import qualified GWind.ServiceAccountKey.RequestUT as GWind_ServiceAccountKey_Re
 import qualified GWind.IAMPolicy.RequestUT as GWind_IAMPolicy_RequestUT (testList)
 import qualified GWind.BillingProject.MutatorUT as GWind_BillingProject_MutatorUT (testList)
 import qualified GWind.BillingProject.RequestUT as GWind_BillingProject_RequestUT (testList)
+import qualified GWind.Service.MutatorUT as GWind_Service_MutatorUT (testList)
+import qualified GWind.Service.Request1UT as GWind_Service_Request1UT (testList)
+import qualified GWind.Service.Request2UT as GWind_Service_Request2UT (testList)
 
 --
 main :: IO Counts
@@ -63,6 +69,9 @@ testList = TestList [
     GWind_IAMPolicy_RequestUT.testList,
     GWind_BillingProject_MutatorUT.testList,
     GWind_BillingProject_RequestUT.testList,
+    GWind_Service_MutatorUT.testList,
+    GWind_Service_Request1UT.testList,
+    GWind_Service_Request2UT.testList,
     GWind_Common_PresenterIT.testList,
     GWind_Common_PreserverIT.testList,
     GWind_Common_OpterIT.testList,
@@ -96,6 +105,9 @@ testList = TestList [
     GWind_BillingProject_ConstructorIT.testList,
     GWind_BillingProject_AdapterIT.testList,
     GWind_Service_ControlIT.testList,
+    GWind_Service_ServiceIT.testList,
+    GWind_Service_ConstructorIT.testList,
+    GWind_Service_AdapterIT.testList,
     GWind_StorageBucket_ControlIT.testList]
 
 --

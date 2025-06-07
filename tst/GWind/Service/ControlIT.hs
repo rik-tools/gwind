@@ -1,9 +1,9 @@
--- ⚠
+--
 module GWind.Service.ControlIT (testList)
 where
 
-    import Test.HUnit (Test (TestCase, TestList), assertEqual)
-    import GWind.Service.Control (reviseServicesM, createServicesM, deleteServicesM)
+    import Test.HUnit (Test ({-TestCase,-} TestList){-, assertEqual-})
+    import GWind.Service.Control ({-reviseServicesM, createServicesM, deleteServicesM-})
 
 --
     testList :: Test
@@ -14,26 +14,26 @@ where
 
 -- reviseServicesM :: ProjectSnake -> IO ()
     reviseServicesMCases :: [Test]
-    reviseServicesMCases = [
+    reviseServicesMCases = [{-
         TestCase (assertEqual
             "should return reviseServicesM"
             undefined
-            =<< reviseServicesM undefined)]
+            =<< reviseServicesM undefined)-}]
 
 -- createServicesM :: ProjectSnake -> ServiceNicks -> IO ()
     createServicesMCases :: [Test]
-    createServicesMCases = [
+    createServicesMCases = [{-
         TestCase (assertEqual
             "should return createServicesM"
             undefined
-            =<< createServicesM undefined undefined)]
+            =<< createServicesM undefined undefined)-}]
 
 -- deleteServicesM :: ProjectSnake -> ServiceNicks -> IO ()
     deleteServicesMCases :: [Test]
-    deleteServicesMCases = [
+    deleteServicesMCases = [{-
         TestCase (assertEqual
             "should return deleteServicesM"
             undefined
-            =<< deleteServicesM undefined undefined)]
+            =<< deleteServicesM undefined undefined)-}]
 
 --
