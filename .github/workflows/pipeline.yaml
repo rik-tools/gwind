@@ -1,9 +1,6 @@
 name: Pipeline
 
-on:
-  push:
-    branches:
-    - main
+on: push
 
 jobs:
   entrance:
@@ -12,6 +9,7 @@ jobs:
     - name: foo
       run: |
         echo ${{github.ref_name}}
+        echo ${{github.event}}
 
 #  linux-amd-cache:
 #    uses: ./.github/workflows/cache.yaml@main

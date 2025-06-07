@@ -7,11 +7,10 @@
 
 ## Doing
 
-### 0.3.4 GWind: iam policy deletion supported
+### 0.4.0 GWind: iam policy supported
 
 
 ## To Do
-* 0.4.0 GWind: iam policy supported
 * 0.4.1 GWind: billing account revision supported
 * 0.4.2 GWind: billing project revision supported
 * 0.4.3 GWind: billing project creation supported
@@ -29,6 +28,8 @@
 
 
 ## Done
+
+### 0.3.4 GWind: iam policy deletion supported
 
 ### 0.3.3 GWind: iam policy binding deletion supported
 

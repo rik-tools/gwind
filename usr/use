@@ -54,7 +54,6 @@ PATH="$(stack_lbp):$PATH"
 && assert_exit_n 38 "gwind-exe delete whatever"\
 && assert_exit_n 39 "gwind-exe whatever"\
 \
-&& assert_exit_0 "gwind-exe delete iam-policy $P"\
 && echo ®
 
 : '
@@ -71,4 +70,5 @@ PATH="$(stack_lbp):$PATH"
 && assert_exit_0 "gwind-exe revise iam-policy $P"\
 && assert_exit_0 "gwind-exe create iam-policy-binding $P $SA"\
 && assert_exit_0 "gwind-exe delete iam-policy-binding $P $SA"\
+&& assert_exit_0 "gwind-exe delete iam-policy $P"\
 '
