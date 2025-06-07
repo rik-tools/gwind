@@ -7,11 +7,10 @@
 
 ## Doing
 
-### 0.6.2 GWind: service creation supported
+### 0.6.3 GWind: service deletion supported
 
 
 ## To Do
-* 0.6.3 GWind: service deletion supported
 * 0.7.0 GWind: services supported
 * 0.7.1 GWind: bucket revision supported
 * 0.7.2 GWind: bucket creation supported
@@ -21,6 +20,8 @@
 
 
 ## Done
+
+### 0.6.2 GWind: service creation supported
 
 ### 0.6.1 GWind: service revision supported
 * src/GWind/Service/Adapter.hs
