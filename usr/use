@@ -54,9 +54,12 @@ PATH="$(stack_lbp):$PATH"
 && assert_exit_n 38 "gwind-exe delete whatever"\
 && assert_exit_n 39 "gwind-exe whatever"\
 \
+&& assert_exit_0 "gwind-exe revise billing-projects $BA"\
 && echo ®
 
 : '
+&& assert_exit_0 "gwind-exe create billing-project $P $BA"\
+&& assert_exit_0 "gwind-exe delete billing-project $P"\
 #
 && assert_exit_0 "gwind-exe revise projects"\
 && assert_exit_0 "gwind-exe delete project $P"\

@@ -28,14 +28,11 @@
 | src    | GWind.Common.Domain            | Snake                     | String         |
 | src    | GWind.Common.Domain            | Kebab                     | String         |
 | src    | GWind.Common.Domain            | Donut                     | String         |
-| src    | GWind.Project.Domain           | ProjectSnake              | Snake          |
-| src    | GWind.ServiceAccount.Domain    | ServiceSnake              | Snake          |
-| src    | GWind.BillingProject.Domain    | BillingSnake              | Snake          |
-| src    | GWind.Service.Domain           | ServiceNicks              | String         |
 | src    | GWind.Common.Domain            | URL                       | String         |
 | src    | GWind.Common.Domain            | Code                      | Int            |
 | src    | GWind.Common.Domain            | Body                      | ByteString     |
 | src    | GWind.Common.Domain            | Param                     | (Text, [Text]) |
+| src    | GWind.Project.Domain           | ProjectSnake              | Snake          |
 | src    | GWind.Project.Domain           | ProjectId                 | Kebab          |
 | src    | GWind.Project.Domain           | ProjectName               | Donut          |
 | src    | GWind.Project.Domain           | LifecycleState            | Snake          |
@@ -44,6 +41,10 @@
 | src    | GWind.ServiceAccount.Domain    | ServiceAccountDisplayName | Donut          |
 | src    | GWind.ServiceAccount.Domain    | ServiceAccountEmail       | String         |
 | src    | GWind.ServiceAccountKey.Domain | ServiceAccountKeyName     | Kebab          |
+| src    | GWind.BillingProject.Domain    | BillingSnake              | Snake          |
+| src    | GWind.BillingProject.Domain    | BillingAccountName        | String         |
+| src    | GWind.BillingProject.Domain    | BillingAccountDisplayName | String         |
+| src    | GWind.Service.Domain           | ServiceNicks              | String         |
 
 
 ## Data
@@ -67,6 +68,9 @@
 | src    | GWind.IAMPolicy.Response         | IAMPolicy          | IAMPolicy {bindings :: [Binding], etag :: String, version :: Int} deriving (Eq, Show, Read, Generic)                                                                                          |
 | src    | GWind.BillingAccount.Response    | BillingAccount     | BillingAccount {currencyCode :: String, displayName :: String, masterBillingAccount :: String, name :: String, open :: Bool, parent :: String} deriving (Eq, Show, Read, Generic)             |
 | src    | GWind.BillingAccount.Response    | BillingAccounts    | BillingAccounts {billingAccounts :: [BillingAccount]} deriving (Eq, Show, Read, Generic)                                                                                                      |
+| src    | GWind.BillingProject.Request     | BillingProjectQ    | BillingProjectQ {billingAccountName :: String} deriving (Eq, Show, Read, Generic)                                                                                                             |
+| src    | GWind.BillingProject.Response    | BillingProject     | BillingProject  {billingAccountName :: String, billingEnabled :: Bool, name :: String, projectId :: String} deriving (Eq, Show, Read, Generic)                                                |
+| src    | GWind.BillingProject.Response    | BillingProjects    | BillingProjects {projectBillingInfo :: [BillingProject]} deriving (Eq, Show, Read, Generic)                                                                                                   |
 
 
 ## Constants
@@ -181,6 +185,19 @@
 | src    | GWind.BillingProject.Control        | reviseBillingProjectsM      | BillingSnake -> IO ()                                                    |
 | src    | GWind.BillingProject.Control        | createBillingProjectM       | ProjectSnake -> BillingSnake -> IO ()                                    |
 | src    | GWind.BillingProject.Control        | deleteBillingProjectM       | ProjectSnake -> IO ()                                                    |
+| src    | GWind.BillingProject.Mutator        | billingAccountDisplayName   | BillingSnake -> BillingAccountDisplayName                                |
+| src    | GWind.BillingProject.Accessor       | billingAccountNameM         | BillingAccountDisplayName -> [BillingAccount] -> IO BillingAccountName   |
+| src    | GWind.BillingProject.Service        | revisionBillingProjectsM    | BillingAccountName -> IO [BillingProject]                                |
+| src    | GWind.BillingProject.Service        | creationCodeM               | ProjectId -> BillingAccountName -> IO Code                               |
+| src    | GWind.BillingProject.Service        | deletionCodeM               | ProjectId -> IO Code                                                     |
+| src    | GWind.BillingProject.Constructor    | revisionOutGoerM            | BillingAccountName -> IO OutGoer                                         |
+| src    | GWind.BillingProject.Constructor    | creationOutGoerM            | ProjectId -> BillingAccountName -> IO OutGoer                            |
+| src    | GWind.BillingProject.Constructor    | deletionOutGoerM            | ProjectId -> IO OutGoer                                                  |
+| src    | GWind.BillingProject.Request        | billingProjectQ             | BillingAccountName -> BillingProjectQ                                    |
+| src    | GWind.BillingProject.Adapter        | revimentBillingProjectsM    | InComer -> IO [BillingProject]                                           |
+| src    | GWind.BillingProject.Adapter        | creamentCodeM               | InComer -> IO Code                                                       |
+| src    | GWind.BillingProject.Adapter        | delementCodeM               | InComer -> IO Code                                                       |
+|        |                                     |                             |                                                                          |
 | src    | GWind.Service.Control               | reviseServicesM             | ProjectSnake -> IO ()                                                    |
 | src    | GWind.Service.Control               | createServicesM             | ProjectSnake -> ServiceNicks -> IO ()                                    |
 | src    | GWind.Service.Control               | deleteServicesM             | ProjectSnake -> ServiceNicks -> IO ()                                    |

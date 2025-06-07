@@ -44,7 +44,7 @@ where
 --
     version :: String
     version = unpack [text|
-        0.5.0
+        0.5.1
     |]
 
 --
@@ -60,7 +60,7 @@ where
         GWIND="revise create delete @STD"
         GWIND_REVISE="projects service-accounts service-account-keys iam-policy billing-accounts billing-projects services storage-buckets"
         GWIND_CREATE="project service-account service-account-key iam-policy-binding billing-project services storage-bucket"
-        GWIND_DELETE="project service-account service-account-key iam-policy-binding iam-policy billing project services storage-bucket"
+        GWIND_DELETE="project service-account service-account-key iam-policy-binding iam-policy billing-project services storage-bucket"
 
         cmp_gwind_verbs () {
             COMPREPLY=(@(compgen -W "@GWIND" -- "@cur"))

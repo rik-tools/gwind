@@ -29,6 +29,10 @@ import qualified GWind.BillingAccount.ServiceIT as GWind_BillingAccount_ServiceI
 import qualified GWind.BillingAccount.ConstructorIT as GWind_BillingAccount_ConstructorIT (testList)
 import qualified GWind.BillingAccount.AdapterIT as GWind_BillingAccount_AdapterIT (testList)
 import qualified GWind.BillingProject.ControlIT as GWind_BillingProject_ControlIT (testList)
+import qualified GWind.BillingProject.AccessorIT as GWind_BillingProject_AccessorIT (testList)
+import qualified GWind.BillingProject.ServiceIT as GWind_BillingProject_ServiceIT (testList)
+import qualified GWind.BillingProject.ConstructorIT as GWind_BillingProject_ConstructorIT (testList)
+import qualified GWind.BillingProject.AdapterIT as GWind_BillingProject_AdapterIT (testList)
 import qualified GWind.Service.ControlIT as GWind_Service_ControlIT (testList)
 import qualified GWind.StorageBucket.ControlIT as GWind_StorageBucket_ControlIT (testList)
 import qualified GWind.Common.MutatorUT as GWind_Common_MutatorUT (testList)
@@ -39,6 +43,8 @@ import qualified GWind.ServiceAccount.MutatorUT as GWind_ServiceAccount_MutatorU
 import qualified GWind.ServiceAccount.RequestUT as GWind_ServiceAccount_RequestUT (testList)
 import qualified GWind.ServiceAccountKey.RequestUT as GWind_ServiceAccountKey_RequestUT (testList)
 import qualified GWind.IAMPolicy.RequestUT as GWind_IAMPolicy_RequestUT (testList)
+import qualified GWind.BillingProject.MutatorUT as GWind_BillingProject_MutatorUT (testList)
+import qualified GWind.BillingProject.RequestUT as GWind_BillingProject_RequestUT (testList)
 
 --
 main :: IO Counts
@@ -55,6 +61,8 @@ testList = TestList [
     GWind_ServiceAccount_RequestUT.testList,
     GWind_ServiceAccountKey_RequestUT.testList,
     GWind_IAMPolicy_RequestUT.testList,
+    GWind_BillingProject_MutatorUT.testList,
+    GWind_BillingProject_RequestUT.testList,
     GWind_Common_PresenterIT.testList,
     GWind_Common_PreserverIT.testList,
     GWind_Common_OpterIT.testList,
@@ -83,6 +91,10 @@ testList = TestList [
     GWind_BillingAccount_ConstructorIT.testList,
     GWind_BillingAccount_AdapterIT.testList,
     GWind_BillingProject_ControlIT.testList,
+    GWind_BillingProject_AccessorIT.testList,
+    GWind_BillingProject_ServiceIT.testList,
+    GWind_BillingProject_ConstructorIT.testList,
+    GWind_BillingProject_AdapterIT.testList,
     GWind_Service_ControlIT.testList,
     GWind_StorageBucket_ControlIT.testList]
 

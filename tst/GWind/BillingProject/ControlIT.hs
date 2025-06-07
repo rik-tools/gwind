@@ -1,9 +1,9 @@
--- ⚠
+--
 module GWind.BillingProject.ControlIT (testList)
 where
 
-    import Test.HUnit (Test (TestCase, TestList), assertEqual)
-    import GWind.BillingProject.Control (reviseBillingProjectsM, createBillingProjectM, deleteBillingProjectM)
+    import Test.HUnit (Test ({-TestCase,-} TestList){-, assertEqual-})
+    import GWind.BillingProject.Control ({-reviseBillingProjectsM, createBillingProjectM, deleteBillingProjectM-})
 
 --
     testList :: Test
@@ -14,26 +14,26 @@ where
 
 -- reviseBillingProjectsM :: BillingSnake -> IO ()
     reviseBillingProjectsMCases :: [Test]
-    reviseBillingProjectsMCases = [
+    reviseBillingProjectsMCases = [{-
         TestCase (assertEqual
             "should return reviseBillingProjectsM"
             undefined
-            =<< reviseBillingProjectsM undefined)]
+            =<< reviseBillingProjectsM undefined)-}]
 
 -- createBillingProjectM :: ProjectSnake -> BillingSnake -> IO ()
     createBillingProjectMCases :: [Test]
-    createBillingProjectMCases = [
+    createBillingProjectMCases = [{-
         TestCase (assertEqual
             "should return createBillingProjectM"
             undefined
-            =<< createBillingProjectM undefined undefined)]
+            =<< createBillingProjectM undefined undefined)-}]
 
 -- deleteBillingProjectM :: ProjectSnake -> IO ()
     deleteBillingProjectMCases :: [Test]
-    deleteBillingProjectMCases = [
+    deleteBillingProjectMCases = [{-
         TestCase (assertEqual
             "should return deleteBillingProjectM"
             undefined
-            =<< deleteBillingProjectM undefined)]
+            =<< deleteBillingProjectM undefined)-}]
 
 --
