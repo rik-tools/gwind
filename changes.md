@@ -7,11 +7,10 @@
 
 ## Doing
 
-### 0.3.2 Gwind: iam policy binding creation supported
+### 0.3.3 Gwind: iam policy binding deletion supported
 
 
 ## To Do
-* 0.3.3 Gwind: iam policy binding deletion supported
 * 0.3.4 Gwind: iam policy deletion supported
 * 0.4.0 Gwind: iam policy supported
 * 0.4.1 Gwind: billing account revision supported
@@ -31,6 +30,8 @@
 
 
 ## Done
+
+### 0.3.2 Gwind: iam policy binding creation supported
 
 ### 0.3.1 Gwind: iam policy revision supported
 * src/GWind/IAMPolicy/Adapter.hs
