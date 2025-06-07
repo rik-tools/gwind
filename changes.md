@@ -7,6 +7,21 @@
 
 ## Doing
 
+### 0.6.2 GWind: service creation supported
+
+
+## To Do
+* 0.6.3 GWind: service deletion supported
+* 0.7.0 GWind: services supported
+* 0.7.1 GWind: bucket revision supported
+* 0.7.2 GWind: bucket creation supported
+* 0.7.3 GWind: bucket deletion supported
+* 0.8.0 GWind: buckets supported
+* 1.0.0 GWind: supported
+
+
+## Done
+
 ### 0.6.1 GWind: service revision supported
 * src/GWind/Service/Adapter.hs
 * src/GWind/Service/Constructor.hs
@@ -21,20 +36,6 @@
 * tst/GWind/Service/Request1UT.hs
 * tst/GWind/Service/Request2UT.hs
 * tst/GWind/Service/ServiceIT.hs
-
-
-## To Do
-* 0.6.2 GWind: service creation supported
-* 0.6.3 GWind: service deletion supported
-* 0.7.0 GWind: services supported
-* 0.7.1 GWind: bucket revision supported
-* 0.7.2 GWind: bucket creation supported
-* 0.7.3 GWind: bucket deletion supported
-* 0.8.0 GWind: buckets supported
-* 1.0.0 GWind: supported
-
-
-## Done
 
 ### 0.6.0 GWind: billing projects supported
 
