@@ -52,10 +52,8 @@ PATH="$(stack_lbp):$PATH"
 && assert_exit_n 36 "gwind-exe delete iam-policy-binding My_Project"\
 && assert_exit_n 37 "gwind-exe delete services My_Project"\
 && assert_exit_n 38 "gwind-exe delete whatever"\
-\
 && assert_exit_n 39 "gwind-exe whatever"\
 \
-&& assert_exit_0 "gwind-exe delete services $P $SNs"\
 && echo ®
 
 : '
@@ -79,4 +77,5 @@ PATH="$(stack_lbp):$PATH"
 && assert_exit_0 "gwind-exe delete billing-project $P"\
 && assert_exit_0 "gwind-exe revise services $P"\
 && assert_exit_0 "gwind-exe create services $P $SNs"\
+&& assert_exit_0 "gwind-exe delete services $P $SNs"\
 '
