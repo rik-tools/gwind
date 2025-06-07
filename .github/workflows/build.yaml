@@ -29,6 +29,13 @@ jobs:
     runs-on: ${{inputs.os-name}}
     steps:
 
+    - name: Debug
+      run: |
+        echo ${{inputs.os-name}}
+        echo ${{inputs.program}}
+        echo ${{inputs.version}}
+        echo ${{inputs.suffix}}
+
     - name: Check out code
       uses: actions/checkout@v4
 

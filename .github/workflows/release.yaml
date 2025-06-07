@@ -3,10 +3,10 @@ name: Release
 on:
   workflow_call:
     inputs:
-      linux_amd_name:
+      linux-amd-name:
         type: string
         required: true
-      darwin_arm_name:
+      darwin-arm-name:
         type: string
         required: true
 
@@ -24,13 +24,13 @@ jobs:
       - name: Download executable Linux AMD
         uses: actions/download-artifact@v4
         with:
-          name: ${{inputs.linux_amd_name}}
+          name: ${{inputs.linux-amd-name}}
           path: artefacts
 
       - name: Download executable Darwin ARM
         uses: actions/download-artifact@v4
         with:
-          name: ${{inputs.darwin_arm_name}}
+          name: ${{inputs.darwin-arm-name}}
           path: artefacts
 
       - name: Debug
