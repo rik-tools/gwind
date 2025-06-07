@@ -11,13 +11,16 @@ permissions:
   contents: read
 
 jobs:
-  build:
+
+  cache:
 
     runs-on: ${{inputs.os-name}}
     steps:
 
     - name: Check out code
       uses: actions/checkout@v4
+      with:
+        ref: main
 
     - name: Unpack YAML
       run: |

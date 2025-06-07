@@ -39,7 +39,7 @@ jobs:
         wget $url/0.2.1/rho-system-0.2.1.tar.gz --directory-prefix=tmp
         mv etc/*.yaml* .
 
-    - name: Set up cache
+    - name: Restore cache
       uses: actions/cache@v4
       with:
         key: ${{runner.os}}-Stack-${{hashFiles ('**/stack.yaml.lock')}}
@@ -55,24 +55,6 @@ jobs:
         cabal-version: '3.12.1.0'
         stack-version: '3.3.1'
         enable-stack: true
-
-    - name: Update Stack
-      run: stack update
-
-    - name: Set up Stack
-      run: stack setup
-
-    - name: Build dependencies
-      run: stack build --only-dependencies
-
-    #- name: Debug
-    #  run: |
-    #    ls -al ~/.stack
-    #    du -sh ~/.stack
-    #    ls -al .stack-work
-    #    du -sh .stack-work
-    #    find . -type f -name stack.yaml.lock
-    #    find . -type f -name stack.yaml.lock -exec sha256sum {} \;
 
     - name: Build dependent
       run: stack build

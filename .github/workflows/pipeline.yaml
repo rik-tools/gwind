@@ -1,4 +1,4 @@
-name: Pipeline
+name: Tag Pipeline
 
 on:
   push:
@@ -9,15 +9,27 @@ on:
 
 jobs:
 
-  linux-amd:
-    uses: .github/workflows/tag-build.yaml
+  linux-amd-cache:
+    uses: ./.github/workflows/cache.yaml@main
+    with:
+      os-name: ubuntu-latest
+
+  darwin-arm-cache:
+    uses: ./.github/workflows/cache.yaml@main
+    with:
+      os-name: macos-latest
+
+  linux-amd-build:
+    uses: ./.github/workflows/build.yaml@${{github.ref_name}}
+    needs: linux-amd-cache
     with:
       os-name: ubuntu-latest
       program: gwind
       version: ${{github.ref_name}}
 
-  #darwin-arm:
+  #darwin-arm-build:
   #  uses: ./.github/workflows/build.yaml
+  #  needs: darwin-arm-cache
   #  with:
   #    os-name: macos-latest
   #    program: gwind
@@ -46,8 +58,8 @@ jobs:
   #    suffix: .exe
 
   release:
-    uses: .github/workflows/tag-release.yaml
-    needs: [linux-amd]  #, darwin-arm, linux-arm, darwin-amd, windows-amd
+    uses: .github/workflows/release.yaml
+    needs: [linux-amd-build]  #, darwin-arm, linux-arm, darwin-amd, windows-amd
     with:
       linux_amd_name: ${{needs.linux-amd.artefact_name}}
       #darwin_arm_name: ${{needs.darwin-arm.artefact_name}}
