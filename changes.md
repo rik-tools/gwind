@@ -7,33 +7,34 @@
 
 ## Doing
 
-### 0.3.3 Gwind: iam policy binding deletion supported
+### 0.3.4 GWind: iam policy deletion supported
 
 
 ## To Do
-* 0.3.4 Gwind: iam policy deletion supported
-* 0.4.0 Gwind: iam policy supported
-* 0.4.1 Gwind: billing account revision supported
-* 0.4.2 Gwind: billing project revision supported
-* 0.4.3 Gwind: billing project creation supported
-* 0.4.4 Gwind: billing project deletion supported
-* 0.5.0 Gwind: billing supported
-* 0.5.1 Gwind: service revision supported
-* 0.5.2 Gwind: service creation supported
-* 0.5.3 Gwind: service deletion supported
-* 0.6.0 Gwind: services supported
-* 0.6.1 Gwind: bucket revision supported
-* 0.6.2 Gwind: bucket creation supported
-* 0.6.3 Gwind: bucket deletion supported
+* 0.4.0 GWind: iam policy supported
+* 0.4.1 GWind: billing account revision supported
+* 0.4.2 GWind: billing project revision supported
+* 0.4.3 GWind: billing project creation supported
+* 0.4.4 GWind: billing project deletion supported
+* 0.5.0 GWind: billing supported
+* 0.5.1 GWind: service revision supported
+* 0.5.2 GWind: service creation supported
+* 0.5.3 GWind: service deletion supported
+* 0.6.0 GWind: services supported
+* 0.6.1 GWind: bucket revision supported
+* 0.6.2 GWind: bucket creation supported
+* 0.6.3 GWind: bucket deletion supported
 * 0.7.0 GWind: buckets supported
 * 1.0.0 GWind: supported
 
 
 ## Done
 
-### 0.3.2 Gwind: iam policy binding creation supported
+### 0.3.3 GWind: iam policy binding deletion supported
 
-### 0.3.1 Gwind: iam policy revision supported
+### 0.3.2 GWind: iam policy binding creation supported
+
+### 0.3.1 GWind: iam policy revision supported
 * src/GWind/IAMPolicy/Adapter.hs
 * src/GWind/IAMPolicy/Constructor.hs
 * src/GWind/IAMPolicy/Request.hs
@@ -44,13 +45,13 @@
 * tst/GWind/IAMPolicy/RequestUT.hs
 * tst/GWind/IAMPolicy/ServiceIT.hs
 
-### 0.3.0 Gwind: service account keys supported
+### 0.3.0 GWind: service account keys supported
 
-### 0.2.3 Gwind: service account key deletion supported
+### 0.2.3 GWind: service account key deletion supported
 
-### 0.2.2 Gwind: service account key creation supported
+### 0.2.2 GWind: service account key creation supported
 
-### 0.2.1 Gwind: service account key revision supported
+### 0.2.1 GWind: service account key revision supported
 * src/GWind/ServiceAccountKey/Accessor.hs
 * src/GWind/ServiceAccountKey/Adapter.hs
 * src/GWind/ServiceAccountKey/Constructor.hs
@@ -64,7 +65,7 @@
 * tst/GWind/ServiceAccountKey/RequestUT.hs
 * tst/GWind/ServiceAccountKey/ServiceIT.hs
 
-### 0.2.0 Gwind: service accounts supported
+### 0.2.0 GWind: service accounts supported
 
 ### 0.1.3 GWind: service account deletion supported
 
