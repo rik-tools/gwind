@@ -11,11 +11,11 @@ jobs:
         echo ${{github.ref_name}}
         echo ${{github.event}}
 
-#  linux-amd-cache:
-#    uses: ./.github/workflows/cache.yaml@main
-#    with:
-#      os-name: ubuntu-latest
-#
+  linux-amd-cache:
+    uses: ./.github/workflows/cache.yaml@main
+    with:
+      os-name: ubuntu-latest
+
 #  darwin-arm-cache:
 #    uses: ./.github/workflows/cache.yaml@main
 #    with:

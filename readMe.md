@@ -39,12 +39,12 @@ gwind <verb> <noun> [<adjective> ...]
 | delete | services             | *project-snake* *service-nicks* |
 | delete | bucket               | *project-snake*                 |
 
-| Adjective       | Form                              |
-|-----------------|-----------------------------------|
-| *project-snake* | Thy_GCP                           |
-| *service-snake* | Robot_Thou                        |
-| *billing-snake* | Thy_Billing                       |
-| *service-nicks* | cloudresourcemanager:serviceusage |
+| Adjective       | Form                                  |
+|-----------------|---------------------------------------|
+| *project-snake* | Thy_Project                           |
+| *service-snake* | Thy_Service_Account                   |
+| *billing-snake* | Thy_Billing_Account                   |
+| *service-nicks* | cloudresourcemanager:serviceusage:... |
 
 
 ## Development
@@ -57,7 +57,7 @@ gwind <verb> <noun> [<adjective> ...]
 The response seems to be untrappable and has been seen when GCloud is not on the path.
 ```
 $ gwind revise projects
-gwind-0.0.2-linux-x86_64: gcloud: readCreateProcessWithExitCode: posix_spawnp: does not exist (No such file or directory)
+gwind: gcloud: readCreateProcessWithExitCode: posix_spawnp: does not exist (No such file or directory)
 ```
 
 

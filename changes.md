@@ -7,27 +7,37 @@
 
 ## Doing
 
-### 0.4.0 GWind: iam policy supported
+### 0.4.1 GWind: billing account revision supported
+* src/GWind/BillingAccount/Adapter.hs
+* src/GWind/BillingAccount/Constructor.hs
+* src/GWind/BillingAccount/Response.hs
+* src/GWind/BillingAccount/Service.hs
+* tst/GWind/BillingAccount/AdapterIT.hs
+* tst/GWind/BillingAccount/ConstructorIT.hs
+* tst/GWind/BillingAccount/ServiceIT.hs
+
 
 
 ## To Do
-* 0.4.1 GWind: billing account revision supported
-* 0.4.2 GWind: billing project revision supported
-* 0.4.3 GWind: billing project creation supported
-* 0.4.4 GWind: billing project deletion supported
-* 0.5.0 GWind: billing supported
-* 0.5.1 GWind: service revision supported
-* 0.5.2 GWind: service creation supported
-* 0.5.3 GWind: service deletion supported
-* 0.6.0 GWind: services supported
-* 0.6.1 GWind: bucket revision supported
-* 0.6.2 GWind: bucket creation supported
-* 0.6.3 GWind: bucket deletion supported
-* 0.7.0 GWind: buckets supported
+* 0.5.0 GWind: billing accounts supported
+* 0.5.1 GWind: billing project revision supported
+* 0.5.2 GWind: billing project creation supported
+* 0.5.3 GWind: billing project deletion supported
+* 0.6.0 GWind: billing projects supported
+* 0.6.1 GWind: service revision supported
+* 0.6.2 GWind: service creation supported
+* 0.6.3 GWind: service deletion supported
+* 0.7.0 GWind: services supported
+* 0.7.1 GWind: bucket revision supported
+* 0.7.2 GWind: bucket creation supported
+* 0.7.3 GWind: bucket deletion supported
+* 0.8.0 GWind: buckets supported
 * 1.0.0 GWind: supported
 
 
 ## Done
+
+### 0.4.0 GWind: iam policy supported
 
 ### 0.3.4 GWind: iam policy deletion supported
 

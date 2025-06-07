@@ -25,6 +25,9 @@ import qualified GWind.IAMPolicy.ServiceIT as GWind_IAMPolicy_ServiceIT (testLis
 import qualified GWind.IAMPolicy.ConstructorIT as GWind_IAMPolicy_ConstructorIT (testList)
 import qualified GWind.IAMPolicy.AdapterIT as GWind_IAMPolicy_AdapterIT (testList)
 import qualified GWind.BillingAccount.ControlIT as GWind_BillingAccount_ControlIT (testList)
+import qualified GWind.BillingAccount.ServiceIT as GWind_BillingAccount_ServiceIT (testList)
+import qualified GWind.BillingAccount.ConstructorIT as GWind_BillingAccount_ConstructorIT (testList)
+import qualified GWind.BillingAccount.AdapterIT as GWind_BillingAccount_AdapterIT (testList)
 import qualified GWind.BillingProject.ControlIT as GWind_BillingProject_ControlIT (testList)
 import qualified GWind.Service.ControlIT as GWind_Service_ControlIT (testList)
 import qualified GWind.StorageBucket.ControlIT as GWind_StorageBucket_ControlIT (testList)
@@ -76,6 +79,9 @@ testList = TestList [
     GWind_IAMPolicy_ConstructorIT.testList,
     GWind_IAMPolicy_AdapterIT.testList,
     GWind_BillingAccount_ControlIT.testList,
+    GWind_BillingAccount_ServiceIT.testList,
+    GWind_BillingAccount_ConstructorIT.testList,
+    GWind_BillingAccount_AdapterIT.testList,
     GWind_BillingProject_ControlIT.testList,
     GWind_Service_ControlIT.testList,
     GWind_StorageBucket_ControlIT.testList]

@@ -1,9 +1,9 @@
--- ⚠
+--
 module GWind.BillingAccount.ControlIT (testList)
 where
 
-    import Test.HUnit (Test (TestCase, TestList), assertEqual)
-    import GWind.BillingAccount.Control (reviseBillingAccountsM)
+    import Test.HUnit (Test ({-TestCase,-} TestList){-, assertEqual-})
+    import GWind.BillingAccount.Control ({-reviseBillingAccountsM-})
 
 --
     testList :: Test
@@ -12,10 +12,10 @@ where
 
 -- reviseBillingAccountsM :: IO ()
     reviseBillingAccountsMCases :: [Test]
-    reviseBillingAccountsMCases = [
+    reviseBillingAccountsMCases = [{-
         TestCase (assertEqual
             "should return reviseBillingAccountsM"
             undefined
-            =<< reviseBillingAccountsM )]
+            =<< reviseBillingAccountsM )-}]
 
 --

@@ -65,6 +65,8 @@
 | src    | GWind.IAMPolicy.Request          | IAMPolicyQ         | IAMPolicyQ {policy :: IAMPolicy} deriving (Eq, Show, Read, Generic)                                                                                                                           |
 | src    | GWind.IAMPolicy.Response         | Binding            | Binding {members :: [String], role :: String} deriving (Eq, Show, Read, Generic)                                                                                                              |
 | src    | GWind.IAMPolicy.Response         | IAMPolicy          | IAMPolicy {bindings :: [Binding], etag :: String, version :: Int} deriving (Eq, Show, Read, Generic)                                                                                          |
+| src    | GWind.BillingAccount.Response    | BillingAccount     | BillingAccount {currencyCode :: String, displayName :: String, masterBillingAccount :: String, name :: String, open :: Bool, parent :: String} deriving (Eq, Show, Read, Generic)             |
+| src    | GWind.BillingAccount.Response    | BillingAccounts    | BillingAccounts {billingAccounts :: [BillingAccount]} deriving (Eq, Show, Read, Generic)                                                                                                      |
 
 
 ## Constants
@@ -172,6 +174,10 @@
 | src    | GWind.IAMPolicy.Adapter             | policyDelementCodeM         | InComer -> IO Code                                                       |
 |        |                                     |                             |                                                                          |
 | src    | GWind.BillingAccount.Control        | reviseBillingAccountsM      | IO ()                                                                    |
+| src    | GWind.BillingAccount.Service        | revisionBillingAccountsM    | IO [BillingAccount]                                                      |
+| src    | GWind.BillingAccount.Constructor    | revisionOutGoerM            | IO OutGoer                                                               |
+| src    | GWind.BillingAccount.Adapter        | revimentBillingAccountsM    | InComer -> IO [BillingAccount]                                           |
+|        |                                     |                             |                                                                          |
 | src    | GWind.BillingProject.Control        | reviseBillingProjectsM      | BillingSnake -> IO ()                                                    |
 | src    | GWind.BillingProject.Control        | createBillingProjectM       | ProjectSnake -> BillingSnake -> IO ()                                    |
 | src    | GWind.BillingProject.Control        | deleteBillingProjectM       | ProjectSnake -> IO ()                                                    |
