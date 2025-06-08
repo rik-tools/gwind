@@ -1,0 +1,52 @@
+name: Tag
+
+on:
+  push:
+    tags:
+    - '*'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v4
+    - name: Wait for the Cache workflow
+      env:
+        GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        ORG_REPO: ${{github.repository}}
+      run: ./.github/scripts/check-cache
+
+  linux-amd:
+    needs: cache
+    uses: ./.github/workflows/build.yaml
+    permissions:
+      contents: read
+    with:
+      os-name: ubuntu-latest
+      program: 'gwind'
+      version: ${{github.ref_name}}
+
+  darwin-arm:
+    needs: cache
+    uses: ./.github/workflows/build.yaml
+    permissions:
+      contents: read
+    with:
+      os-name: macos-latest
+      program: 'gwind'
+      version: ${{github.ref_name}}
+
+  release:
+    needs: [linux-amd, darwin-arm]
+    uses: ./.github/workflows/release.yaml
+    permissions:
+      contents: write
+    with:
+      linux-amd-name: ${{needs.linux-amd.artefact_name}}
+      darwin-arm-name: ${{needs.darwin-arm.artefact_name}}

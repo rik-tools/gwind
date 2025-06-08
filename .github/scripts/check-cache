@@ -1,0 +1,50 @@
+#!/bin/bash
+##
+# $ check-cache-workflow
+##
+
+active_ids () {
+    jq () { echo '.workflow_runs[] | select (.name == "Main" and .status != "completed") | .id'; }
+    gh api repos/$ORG_REPO/actions/runs --jq "$(jq)"
+}
+
+status () { id=$1
+    jq () { echo ".workflow_runs[] | select (.id == $id) | .status"; }
+    gh api repos/$ORG_REPO/actions/runs --jq "$(jq)"
+}
+
+conclusion () { id=$1
+    jq () { echo ".workflow_runs[] | select (.id == $id) | .conclusion"; }
+    gh api repos/$ORG_REPO/actions/runs --jq "$(jq)"
+}
+
+allowed=900
+start=$(date +%s)
+echo "repository: $ORG_REPO"
+echo "begin cache workflow check"
+echo "active_ids: $(active_ids)"
+for active_id in $(active_ids)
+do
+    echo "active_id: $active_id"
+    while test "$(status "$active_id")" != "completed"
+    do
+        now=$(date +%s)
+        elapsed=$((now - start))
+        if test $elapsed -gt $allowed
+        then
+            echo "elapsed greater than allowed"
+            exit 2
+        fi
+        sleep 30
+        echo "elapsed: $elapsed"
+    done
+    echo
+    if test "$(conclusion "$active_id")" != "success"
+    then
+        echo "conclusion not success"
+        exit 1
+    fi
+    echo "next"
+done
+echo "end cache workflow check"
+exit 0

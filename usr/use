@@ -54,11 +54,10 @@ PATH="$(stack_lbp):$PATH"
 && assert_exit_n 38 "gwind-exe delete whatever"\
 && assert_exit_n 39 "gwind-exe whatever"\
 \
-&& assert_exit_0 "gwind-exe revise storage-buckets $P"\
+&& assert_exit_0 "gwind-exe create storage-bucket $P"\
 && echo ®
 
 : '
-&& assert_exit_0 "gwind-exe create storage-bucket $P"\
 && assert_exit_0 "gwind-exe delete storage-bucket $P"\
 #
 && assert_exit_0 "gwind-exe revise projects"\
@@ -81,4 +80,5 @@ PATH="$(stack_lbp):$PATH"
 && assert_exit_0 "gwind-exe revise services $P"\
 && assert_exit_0 "gwind-exe create services $P $SNs"\
 && assert_exit_0 "gwind-exe delete services $P $SNs"\
+&& assert_exit_0 "gwind-exe revise storage-buckets $P"\
 '

@@ -1,0 +1,48 @@
+name: Release
+
+on:
+  workflow_call:
+    inputs:
+      linux-amd-name:
+        type: string
+        required: true
+      darwin-arm-name:
+        type: string
+        required: true
+
+jobs:
+
+  release:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Download executable Linux AMD
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{inputs.linux-amd-name}}
+          path: artefacts
+
+      - name: Download executable Darwin ARM
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{inputs.darwin-arm-name}}
+          path: artefacts
+
+      - name: Debug
+        run: |
+          echo ${{github.ref_name}}
+          ls -al ./artefacts
+          echo ---
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: artefacts/**/*
+          tag_name: ${{github.ref_name}}
+          draft: false
+          prerelease: false
+          name: "${{github.ref_name}}"
+          body: "${{github.ref_name}} ${{github.event.head_commit.message}}"
+          token: ${{secrets.GITHUB_TOKEN}}

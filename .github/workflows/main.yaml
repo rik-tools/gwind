@@ -1,0 +1,21 @@
+name: Main
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - stack.yaml.lock
+    - .github/workflows/main.yaml
+
+jobs:
+
+  linux-amd:
+    uses: ./.github/workflows/cache.yaml
+    with:
+      os-name: ubuntu-latest
+
+  darwin-arm:
+    uses: ./.github/workflows/cache.yaml
+    with:
+      os-name: macos-latest

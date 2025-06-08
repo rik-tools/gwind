@@ -4,5 +4,5 @@ packages:
 - .
 # ...
 extra-deps:
-- tmp/rho-system-0.2.1.tar.gz
+- https://github.com/rik-howard/rho-system/releases/download/0.2.1/rho-system-0.2.1.tar.gz
 local-bin-path: /home/rik/studio/product/gwind
