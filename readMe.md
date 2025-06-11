@@ -2,75 +2,37 @@
 
 
 # GWind
-GWind is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly, to let you get on with more interesting activities.  GWind requires GCloud to be on the path. 
+GWind is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly, to let you get on with more interesting activities, with more sophisticated tools.  GWind requires GCloud to be on the path.
 
-
-## Usage
+The assumption is that the personal GCP account is being used mainly for experimentation.  The key idea behind GWind is to spin up a minimal GCP project with as little effort as possible so that more purposeful work can be undertaken with a minimum of fuss.  The problem is that many types of components built in GCP should be taken down soon after being built so as not to incur any unnecessary costs.  An interesting feature of GCP is that project ids must by globally unique and are lost forever on being permanently deleted.  So any code written with a project id hard-coded into it is broken until changed upon the final deletion of the project.  There may be other solutions, however, some ways to avoid having to update the code are: to keep the project empty and active; or, to keep the project in a deletion-requested state and resurrect it temporarily every 25 days or so.  GWind facilitates the offered solutions.
 ```
-gwind --how 
-gwind --version
-source <(gwind --completion) 
-
 gwind <verb> <noun> [<adjective> ...]
+source <(gwind --completion)
+gwind --version
+gwind --how
 ```
-| Verb   | Noun                 | Adjectives                      |
-|--------|----------------------|---------------------------------|
-| revise | projects             |                                 |
-| revise | service-accounts     | *project-snake*                 |
-| revise | service-account-keys | *project-snake* *service-snake* |
-| revise | iam-policy           | *project-snake*                 |
-| revise | billing-accounts     |                                 |
-| revise | billing-projects     | *billing-snake*                 |
-| revise | services             | *project-snake*                 |
-| revise | buckets              | *project-snake*                 |
-| create | project              | *project-snake*                 |
-| create | service-account      | *project-snake* *service-snake* |
-| create | service-account-key  | *project-snake* *service-snake* |
-| create | iam-policy-binding   | *project-snake* *service-snake* |
-| create | billing-project      | *project-snake* *billing-snake* |
-| create | services             | *project-snake* *service-nicks* |
-| create | bucket               | *project-snake*                 |
-| delete | project              | *project-snake*                 |
-| delete | service-account      | *project-snake* *service-snake* |
-| delete | service-account-key  | *project-snake* *service-snake* |
-| delete | iam-policy-binding   | *project-snake* *service-snake* |
-| delete | iam-policy           | *project-snake*                 |
-| delete | billing-project      | *project-snake* *billing-snake* |
-| delete | services             | *project-snake* *service-nicks* |
-| delete | bucket               | *project-snake*                 |
 
-| Adjective       | Form                                  |
-|-----------------|---------------------------------------|
-| *project-snake* | Thy_Project                           |
-| *service-snake* | Thy_Service_Account                   |
-| *billing-snake* | Thy_Billing_Account                   |
-| *service-nicks* | cloudresourcemanager:serviceusage:... |
+The idea is to provide a compact, command-line program for engaging with the GCP API.  The program provides the abilities to **create**, **revise** and **delete** some GCP objects; the objects are **project**, **service-account**, **service-account-key**, **iam-policy**, **billing-account**, **billing-project**, **service** and **storage-bucket**.  The user supplies some minimal _project_, _service account_, _billing account_ and _service_ data, everything else being inferred: the supply is provided in `Snake_Case` (and make use the tab completion).  The [program](https://github.com/rik-routine/gwind/releases/latest) is a compiled, single-file binary with no dependencies (besides GCloud!) and so is easily deployable.  The program's commands are kept as distinct actions because, although the engagement with the API is synchronous, what GCP does in the background is not.  Hence, some care with the timing of the program's invocations is sometimes warranted.
+
+After successfully running GWind's create-commands in the correct order, there will be:
+* a project and a service account;
+* both system-managed and user-managed service account keys;
+* a local copy of the user-managed service account key JSON;
+* an entry in the IAM policy editor role bindings for the service account;
+* a billing project linked to the user's billing account;
+* the specified (and possibly some unspecified) services; and,
+* optionally, a storage bucket for storing any state that may be created by later activities.
+
+
+## Operation
+* [Tutorial](tutorial.md): is a chatty introduction, covering GWind's features, interspersed with some usability tips.
+* [Usage](usage.md): is a more-organised reference, covering the same ground as the tutorial.
+* [System](system.md): contains some technical notes.
 
 
 ## Development
-* [Artisan](artisan.md)
-* [Builder](builder.md)
-* [Changes](changes.md)
+* [Artisan](artisan.md): tabulates the exposed module members.
+* [Builder](builder.md): preserves the development workflow.
+* [Changes](changes.md): details the progress of the development.
 
-
-## Note
-The response seems to be untrappable and has been seen when GCloud is not on the path.
-```
-$ gwind revise projects
-gwind: gcloud: readCreateProcessWithExitCode: posix_spawnp: does not exist (No such file or directory)
-```
-
-
-## Program Flow
-LHS ordinal: invocation from upper module of lower; RHS ordinal: result by lower to upper
-```mermaid
-graph TD;
-    Control -.-|1, 2| Mutator
-    Control -.-|3, 4| Accessor
-    Control ---|5, 12| Service
-    Service ---|6, 9| Constructor
-    Constructor -.-|7, 8| Request
-    Service ---|10, 11| Adapter
-```
-
-## *2025-05-06*
+*2025-05-06*

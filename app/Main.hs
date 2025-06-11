@@ -51,7 +51,7 @@ where
     processing :: [String] -> IO ()
     processing arguments =
         case arguments of
-            [] -> exit 1 "missing verb"
+            [] -> putStrLn how -- exit 1 "missing verb" --
             --
             "--how"       : _ -> putStrLn how
             "--version"   : _ -> putStrLn version

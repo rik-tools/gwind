@@ -9,6 +9,6 @@ where
 --
     storageBucketId :: ProjectSnake -> StorageBucketId
     storageBucketId projectSnake =
-        kebab projectSnake ++ "-terraform"
+        kebab projectSnake ++ "-state"
 
 --

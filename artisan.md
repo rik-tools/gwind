@@ -43,9 +43,9 @@
 | src    | GWind.ServiceAccountKey.Domain | ServiceAccountKeyName     | Kebab          |
 | src    | GWind.BillingProject.Domain    | BillingSnake              | Snake          |
 | src    | GWind.BillingProject.Domain    | BillingAccountName        | String         |
-| src    | GWind.BillingProject.Domain    | BillingAccountDisplayName | String         |
+| src    | GWind.BillingProject.Domain    | BillingAccountDisplayName | Donut          |
 | src    | GWind.Service.Domain           | ServiceNicks              | String         |
-| src    | GWind.Service.Domain           | ServiceId                 | String         |
+| src    | GWind.Service.Domain           | ServiceId                 | Kebab          |
 | src    | GWind.StorageBucket.Domain     | StorageBucketId           | Kebab          |
 
 

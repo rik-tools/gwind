@@ -38,7 +38,6 @@ do
         sleep 30
         echo "elapsed: $elapsed"
     done
-    echo
     if test "$(conclusion "$active_id")" != "success"
     then
         echo "conclusion not success"
