@@ -26,6 +26,19 @@ gwind: gcloud: readCreateProcessWithExitCode: posix_spawnp: does not exist (No s
 The source is organised in a modular fashion.  That is, there is a GWind package for each GCP data type that is implemented.  Additionally, there is a Common package, on which the noncommon packages rely.
 
 
+## Program Flow
+For each noncommon package, the dotted lines represent some possible calls; the solid lines represent some definite calls.  The lines' labels indicate the position of a call or reply in the sequence of events: calls first, top down; replies second, bottom up.
+```mermaid
+graph TD;
+    Control -.-|1, 2| Mutator
+    Control -.-|3, 4| Accessor
+    Control ---|5, 12| Service
+    Service ---|6, 9| Constructor
+    Constructor -.-|7, 8| Request
+    Service ---|10, 11| Adapter
+```
+
+
 ## Packages
 * [Common](src/GWind/Common)
 * [Project](src/GWind/Project)
@@ -36,19 +49,6 @@ The source is organised in a modular fashion.  That is, there is a GWind package
 * [BillingProject](src/GWind/BillingProject)
 * [Service](src/GWind/Service)
 * [StorageBucket](src/GWind/StorageBucket)
-
-
-## Program Flow
-The dotted lines represent some possible calls; the solid lines represent some definite calls.  The lines' labels indicate the position of a call or reply in the sequence of events: calls first, top down; replies second, bottom up.
-```mermaid
-graph TD;
-    Control -.-|1, 2| Mutator
-    Control -.-|3, 4| Accessor
-    Control ---|5, 12| Service
-    Service ---|6, 9| Constructor
-    Constructor -.-|7, 8| Request
-    Service ---|10, 11| Adapter
-```
 
 
 ## General Package Structure

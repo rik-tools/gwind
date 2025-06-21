@@ -44,7 +44,7 @@ where
 --
     version :: String
     version = unpack [text|
-        1.0.0
+        1.0.1
     |]
 
 --

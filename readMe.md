@@ -2,7 +2,7 @@
 
 
 # GWind
-GWind is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly, to let you get on with more interesting activities, with more sophisticated tools.  GWind requires GCloud to be on the path.
+The GWind [program](https://github.com/rik-routine/gwind/releases/latest) is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly, to let you get on with more interesting activities, with more sophisticated tools.  GWind requires GCloud to be on the path.
 
 
 ## Operation
@@ -19,7 +19,7 @@ source <(gwind --completion)
 gwind --version
 gwind --how
 ```
-The idea is to provide a compact, command-line program for engaging with the GCP API.  The program provides the abilities to **create**, **revise** and **delete** some GCP objects; the objects are **project**, **service-account**, **service-account-key**, **iam-policy**, **billing-account**, **billing-project**, **service** and **storage-bucket**.  The user supplies some minimal data for _project_, _service account_, _billing account_ and _service_; everything else is inferred.  The supplied variables are provided in `Snake_Case`, which allows for fewer variables to be employed across all invocations -- if in doubt, tabbing provides a hint.  The [program](https://github.com/rik-routine/gwind/releases/latest) is a single-file, compiled binary with no dependencies (besides GCloud!) and so is easily deployable.  The program's commands are kept as distinct actions because, although the engagement with the API is synchronous, what GCP does in the background is not.  Hence, some care with the timing of the program's invocations is sometimes warranted.
+The idea is to provide a compact, command-line program for engaging with the GCP API.  The program provides the abilities to **create**, **revise** and **delete** some GCP objects; the objects are **project**, **service-account**, **service-account-key**, **iam-policy**, **billing-account**, **billing-project**, **service** and **storage-bucket**.  The user supplies some minimal data for _project_, _service account_, _billing account_ and _service_; everything else is inferred.  The supplied variables are provided in `Snake_Case`, which allows for fewer variables to be employed across all invocations -- if in doubt, tabbing provides a hint.  The program is a single-file, compiled binary with no dependencies (besides GCloud!) and so is easily deployable.  The program's commands are kept as distinct actions because, although the engagement with the API is synchronous, what GCP does in the background is not.  Hence, some care with the timing of the program's invocations is sometimes warranted.
 
 After successfully running GWind's create-commands in the correct order, there will be:
 * a project with a service account;

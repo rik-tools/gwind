@@ -7,14 +7,16 @@
 
 ## Doing
 
-### 1.0.0 GWind: supported
+### 1.0.1 GWind: documentation updated
 
 
 ## To Do
-* 1.0.1 GWind: ...
+* 1.0.2 GWind: ...
 
 
 ## Done
+
+### 1.0.0 GWind: supported
 
 ### 0.8.0 GWind: storage buckets supported
 * system.md
