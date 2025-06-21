@@ -3,7 +3,7 @@
 
 
 # System
-GWind relies on GCloud for its authentication.
+This contains some technical notes.  GWind relies on GCloud for its authentication.
 ```
 $ gcloud --version
 Google Cloud SDK 525.0.0
@@ -39,7 +39,7 @@ The source is organised in a modular fashion.  That is, there is a GWind package
 
 
 ## Program Flow
-The dotted lines represent some possible calls; the solid lines represent some definite calls.  The lines' labels indicate the position of a call or reply in the sequence of events.  Calls originate in the upper, connected rectangle (package) and terminate in the lower and, hence, replies are vice versa.
+The dotted lines represent some possible calls; the solid lines represent some definite calls.  The lines' labels indicate the position of a call or reply in the sequence of events: calls first, top down; replies second, bottom up.
 ```mermaid
 graph TD;
     Control -.-|1, 2| Mutator
@@ -55,8 +55,8 @@ graph TD;
 Each noncommon package contains a subset of these modules.
 * Control: accepts command-line arguments and prints the result of the call.
 * Mutator: accepts command-line arguments and returns GCP variables.
-* Accessor: accepts GCP objects and returns an appropriate refinement.
-* Service: accepts GCP variables and returns a response object or a response code.
+* Accessor: accepts GCP lists and returns an appropriate refinement.
+* Service: accepts GCP variables and returns a response object, list or code.
 * Constructor: accepts GCP variables and returns an appropriate request.
 * Adapter: accepts GCP responses and converts them into native data structures.
 * Request: defines the native data structure corresponding to a JSON request body.
@@ -85,10 +85,15 @@ Each noncommon package contains a subset of these modules.
 ...
 
 
+## CI/CD
+...
+
+
 ## Patterns
 When GWind is viewed as a CQRS application:
 * the commands are implemented by the create- and delete-commands;
-* the queries are implemented by the revise-commands.
+* the queries are implemented by the revise-commands;
+* the responsibility is segregated in that each 'pipe' (create, revise, delete) is independent of the others.
 
 Viewed as a hexagonal application, GWind:
 * has one port: the Main module that accepts the command-line arguments and routes the program to the relevant control;
@@ -96,9 +101,12 @@ Viewed as a hexagonal application, GWind:
 
 
 ## Needs Improvement
+In no particular order,
 1. Cache to stop API-bothering
 2. Remove dependency on GCloud
 3. Handle errors (e.g., revising service account keys when there is no such service account)
-4. Rework the tab completion so that `gwind create service-account The_Project <tab>` gives `gwind create service-account The_Project <service-snake>`
+4. Rework the tab completion so that, for example, `gwind create service-account The_Project <tab>` gives `gwind create service-account The_Project <service-snake>`
 5. Accept both service names and service nicknames for creating and deleting
 6. It would be good if, along with the HTTP response code, the commands returned a GCP console URL, linking to the created/deleted object
+7. Make the commands idempotent
+8. Allow the bucket region to be specified

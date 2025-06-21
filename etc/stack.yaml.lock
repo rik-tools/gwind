@@ -5,16 +5,16 @@
 
 packages:
 - completed:
-    name: rho-system
+    name: systex
     pantry-tree:
-      sha256: 41f4a6ef5ef6b9cda8d5ed9cead3b3ce557a3f63a6af928f60abbd4fc6b8fc2c
-      size: 3540
-    sha256: 5e8e19e9443b5695095a44c18508fa57efbf65089fd82e5c199b246564439c83
-    size: 10886
-    url: https://github.com/rik-howard/rho-system/releases/download/0.2.1/rho-system-0.2.1.tar.gz
-    version: 0.2.1
+      sha256: 14e356ecd94ef2f82c205bfd249664bd087409106bcad0361ad1b793eac8b333
+      size: 3536
+    sha256: 61f8c3286ffb385d8f00896b0b5cb7149797029543e39c5868de3c9d6b5e6cb8
+    size: 10878
+    url: https://github.com/rik-routine/systex/releases/download/0.3.0/systex-0.3.0.tar.gz
+    version: 0.3.0
   original:
-    url: https://github.com/rik-howard/rho-system/releases/download/0.2.1/rho-system-0.2.1.tar.gz
+    url: https://github.com/rik-routine/systex/releases/download/0.3.0/systex-0.3.0.tar.gz
 snapshots:
 - completed:
     sha256: f4a61482dcad21151331bf84ec85bee9be43965f143791fa4bb202ac1e443e1b

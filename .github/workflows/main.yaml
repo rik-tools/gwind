@@ -5,7 +5,7 @@ on:
     branches:
     - main
     paths:
-    - stack.yaml.lock
+    - etc/stack.yaml.lock
     - .github/workflows/main.yaml
 
 jobs:

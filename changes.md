@@ -7,17 +7,19 @@
 
 ## Doing
 
+### 1.0.0 GWind: supported
+
+
+## To Do
+* 1.0.1 GWind: ...
+
+
+## Done
+
 ### 0.8.0 GWind: storage buckets supported
 * system.md
 * tutorial.md
 * usage.md
-
-
-## To Do
-* 1.0.0 GWind: supported
-
-
-## Done
 
 ### 0.7.3 GWind: storage bucket deletion supported
 

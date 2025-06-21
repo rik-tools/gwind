@@ -3,7 +3,7 @@
 # $ usr/use
 ##
 # shellcheck disable=SC2016
-# source .secrets
+# source .variables  # see note below
 source usr/usage
 PATH="$(stack_lbp):$PATH"
 
@@ -84,7 +84,7 @@ PATH="$(stack_lbp):$PATH"
 #
 # Note,
 # when the 'exit 0' assertions are uncommented and moved above the 'echo ®' line,
-# a `.secrets` bash module must be sourced and contain, with suitable value substitutions:
+# a .variables bash module must be sourced and contain, with suitable value substitutions:
 #
 # #!/bin/bash
 # export P=The_Project
