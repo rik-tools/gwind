@@ -7,14 +7,16 @@
 
 ## Doing
 
-### 1.0.1 GWind: documentation updated
+### 1.0.2 GWind: relocated
 
 
 ## To Do
-* 1.0.2 GWind: ...
+* 1.0.3 GWind: ...
 
 
 ## Done
+
+### 1.0.1 GWind: documentation updated
 
 ### 1.0.0 GWind: supported
 

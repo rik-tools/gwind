@@ -86,7 +86,13 @@ Each noncommon package contains a subset of these modules.
 
 
 ## CI/CD
-...
+```mermaid
+graph TD;
+    main -->|uses| cache
+    tag -->|runs| check-cache
+    tag -->|uses| build
+    tag -->|uses| release
+```
 
 
 ## Patterns

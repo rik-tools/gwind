@@ -11,10 +11,10 @@ packages:
       size: 3536
     sha256: 61f8c3286ffb385d8f00896b0b5cb7149797029543e39c5868de3c9d6b5e6cb8
     size: 10878
-    url: https://github.com/rik-routine/systex/releases/download/0.3.0/systex-0.3.0.tar.gz
+    url: https://github.com/rik-tools/systex/releases/download/0.3.0/systex-0.3.0.tar.gz
     version: 0.3.0
   original:
-    url: https://github.com/rik-routine/systex/releases/download/0.3.0/systex-0.3.0.tar.gz
+    url: https://github.com/rik-tools/systex/releases/download/0.3.0/systex-0.3.0.tar.gz
 snapshots:
 - completed:
     sha256: f4a61482dcad21151331bf84ec85bee9be43965f143791fa4bb202ac1e443e1b

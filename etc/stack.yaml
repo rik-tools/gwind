@@ -4,5 +4,5 @@ packages:
 - .
 # ...
 extra-deps:
-- https://github.com/rik-routine/systex/releases/download/0.3.0/systex-0.3.0.tar.gz
+- https://github.com/rik-tools/systex/releases/download/0.3.0/systex-0.3.0.tar.gz
 local-bin-path: /home/rik/studio/product/gwind

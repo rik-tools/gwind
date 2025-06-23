@@ -38,6 +38,6 @@ source path stack
 stack ...
 ```
 ```bash
-source path diva
+source path diva gcloud
 diva repack
 ```

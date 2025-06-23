@@ -2,7 +2,7 @@
 
 
 # GWind
-The GWind [program](https://github.com/rik-routine/gwind/releases/latest) is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly, to let you get on with more interesting activities, with more sophisticated tools.  GWind requires GCloud to be on the path.
+The GWind [program](https://github.com/rik-tools/gwind/releases/latest) is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly, to let you get on with more interesting activities, with more sophisticated tools.  GWind requires GCloud to be on the path.
 
 
 ## Operation

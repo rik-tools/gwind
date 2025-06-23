@@ -1,6 +1,6 @@
 name: "gwind"
-version: 1.0.1
-github: "rik-routine/gwind"
+version: 1.0.2
+github: "rik-tools/gwind"
 license: "GPL"
 license-file: "etc/license"
 author: "Rik Howard"
@@ -8,7 +8,7 @@ maintainer: "rik@lrbh.info"
 copyright: "2025 Rik Howard"
 synopsis: "GWind is a tool for accomplishing some foundational tasks on GCP."
 category: "Experimental"
-description: "Please see the read-me on GitHub at <https://github.com/rik-routine/gwind>"
+description: "Please see the read-me on GitHub at <https://github.com/rik-tools/gwind>"
 
 extra-doc-files:
 - readMe.md
