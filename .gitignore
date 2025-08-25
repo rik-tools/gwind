@@ -1,9 +1,12 @@
 
 tmp
 zoo
+.hie
 .diva
 .idea
 .stack-work
+dist-newstyle
+cabal.project
 .directory
 .variables
 *.cabal

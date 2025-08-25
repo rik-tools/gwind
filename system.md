@@ -39,18 +39,6 @@ graph TD;
 ```
 
 
-## Packages
-* [Common](src/GWind/Common)
-* [Project](src/GWind/Project)
-* [ServiceAccount](src/GWind/ServiceAccount)
-* [ServiceAccountKey](src/GWind/ServiceAccountKey)
-* [IAMPolicy](src/GWind/IAMPolicy)
-* [BillingAccount](src/GWind/BillingAccount)
-* [BillingProject](src/GWind/BillingProject)
-* [Service](src/GWind/Service)
-* [StorageBucket](src/GWind/StorageBucket)
-
-
 ## General Package Structure
 Each noncommon package contains a subset of these modules.
 * Control: accepts command-line arguments and prints the result of the call.
@@ -62,6 +50,18 @@ Each noncommon package contains a subset of these modules.
 * Request: defines the native data structure corresponding to a JSON request body.
 * Response: defines the native data structure corresponding to a JSON response body
 * Domain: provides some type aliases for some standard types.
+
+
+## Packages
+* [Common](src/GWind/Common)
+* [Project](src/GWind/Project)
+* [ServiceAccount](src/GWind/ServiceAccount)
+* [ServiceAccountKey](src/GWind/ServiceAccountKey)
+* [IAMPolicy](src/GWind/IAMPolicy)
+* [BillingAccount](src/GWind/BillingAccount)
+* [BillingProject](src/GWind/BillingProject)
+* [Service](src/GWind/Service)
+* [StorageBucket](src/GWind/StorageBucket)
 
 
 ## The Common Package

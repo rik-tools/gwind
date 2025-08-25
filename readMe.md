@@ -2,18 +2,18 @@
 
 
 # GWind
-The GWind [program](https://github.com/rik-tools/gwind/releases/latest) is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly, to let you get on with more interesting activities, with more sophisticated tools.  GWind requires GCloud to be on the path.
+The GWind [program](https://github.com/rik-tools/gwind/releases/latest) is a command-line tool for accomplishing some foundational tasks on a personal GCP account.  It won't take you far but it'll get you there quickly, to let you get on with more-interesting activities, with more-sophisticated tools.  GWind requires GCloud to be on the path.  Watch the [video](https://rik-howard.info/video/gwind-tutorial.mp4)!
 
 
 ## Operation
-* [Tutorial](tutorial.md): is a chatty introduction, covering GWind's features, interspersed with some usability tips -- watch the [video](https://rik-howard.info/video/gwind-tutorial.mp4)!
+* [Tutorial](tutorial.md): is a chatty introduction, covering GWind's features, interspersed with some usability tips.
 * [Usage](usage.md): is a more-organised reference, covering, more or less, the same ground as the tutorial.
 * [System](system.md): contains some technical notes.
 
 
 ## About
-The assumption is that the personal GCP account is being used mainly for experimentation.  The key idea behind GWind is to be able to spin up a minimal GCP project with as little effort as possible so that more purposeful work can be undertaken with a minimum of fuss.  The problem is that many types of components built in GCP should be taken down soon after being built so as not to incur any unnecessary costs.  An interesting feature of GCP is that project ids must by globally unique and are lost forever on being permanently deleted.  So any code written with a project id hard-coded into it is broken by the final deletion of the project until the code is updated.  There may be other solutions, however, some ways to avoid having to update the code are: to keep the project empty (so that it attracts no cost) and active (so that it can be built up again when required); or, to keep the project in a deletion-requested state and periodically resurrect it temporarily (so that, when required, it can be undeleted and built up, as before).  GWind can help with these possibilities.
-```
+The assumption is that the personal GCP account is being used mainly for experimentation.  The key idea behind GWind is to be able to spin up a minimal GCP project with as little effort as possible so that more-purposeful work can be undertaken with a minimum of fuss.  The problem is that many types of components built in GCP should be taken down soon after being built so as not to incur any unnecessary costs.  An interesting feature of GCP is that project ids must by globally unique and are lost forever on being permanently deleted.  So any code written with a project id hard-coded into it is broken by the final deletion of the project until the code is updated.  There may be other solutions, however, some ways to avoid having to update the code are: to keep the project empty (so that it attracts no cost) and active (so that it can be built up again when required); or, to keep the project in a deletion-requested state and periodically resurrect it temporarily (so that, when required, it can be undeleted and built up, as before).  GWind can help with these possibilities.
+```code
 gwind <verb> <noun> [<adjective> ...]
 source <(gwind --completion)
 gwind --version
